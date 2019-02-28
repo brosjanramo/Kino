@@ -1,0 +1,19 @@
+@startuml
+
+
+
+:Costumer: as c
+
+:c: --> (Choose event)
+:c: --> (See eventlist)
+:c: --> (Buy tickets)
+
+:Management: as m
+
+:m: --> (See eventlist)
+:m: --> (Sell tickets)
+:m: --> (Ticket count and control)
+:m: --> (Arrange events)
+
+
+@enduml
