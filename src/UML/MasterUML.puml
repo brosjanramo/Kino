@@ -1,0 +1,13 @@
+@startuml
+
+
+CostumerManager --> GUI
+GUI --> Database
+Database --> GUI
+GUI --> TicketControl
+TicketControl --> Authentication
+Authentication --> TicketControl
+TicketControl --> GUI
+
+
+@enduml
