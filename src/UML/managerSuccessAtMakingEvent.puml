@@ -1,0 +1,21 @@
+@startuml
+
+
+Manager --> GUI: Add Event
+activate GUI
+activate Database
+GUI --> Database: Update added event
+activate TicketControl
+Database --> TicketControl: Generate tickets for event
+activate Authentication
+TicketControl --> Authentication: Authenticate tickets with venue
+Authentication --> TicketControl: Confirm authentication
+TicketControl --> Database: Add tickets for event
+Database --> GUI: Display Events and Tickets
+deactivate GUI
+deactivate Database
+deactivate TicketControl
+deactivate Authentication
+
+
+@enduml
