@@ -1,0 +1,16 @@
+@startuml
+actor Manager as M
+
+M -> GUI : Create event
+GUI -> Client : Authenticate data
+Client --> GUI : Data invalid
+GUI --> M : Error message
+M -> GUI : Adjust data
+GUI -> Client : Authenticate data
+database Database
+Client -> Database : Send metadata
+Database --> Client : Connection lost
+Client --> GUI : No internet connection
+GUI --> M : Error message
+
+@enduml
