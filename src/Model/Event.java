@@ -18,63 +18,38 @@ public class Event {
         return EventId;
     }
 
-    public void setEventId(int eventId) {
-        EventId = eventId;
-    }
+    public void setEventId(int eventId) { EventId = eventId; }
 
-    public int getManagerId() {
-        return ManagerId;
-    }
+    public int getManagerId() { return ManagerId; }
 
-    public void setManagerId(int managerId) {
-        ManagerId = managerId;
-    }
+    public void setManagerId(int managerId){ ManagerId = managerId; }
 
-    public int getTitle() {
-        return Title;
-    }
+    public int getTitle() { return Title; }
 
-    public void setTitle(int title) {
-        Title = title;
-    }
+    public void setTitle(int title) { Title = title; }
 
-    public LocalDate getDate() {
-        return Date;
-    }
+    public LocalDate getDate() { return Date; }
 
-    public void setDate(LocalDate date) {
-        Date = date;
-    }
+    public void setDate(LocalDate date) { Date = date; }
 
-    public LocalDate getAgerestrict() {
-        return Agerestrict;
-    }
+    public LocalDate getAgerestrict() { return Agerestrict; }
 
-    public void setAgerestrict(LocalDate agerestrict) {
-        Agerestrict = agerestrict;
-    }
+    public void setAgerestrict(LocalDate agerestrict) { Agerestrict = agerestrict; }
 
-    public String getPlace() {
-        return place;
-    }
+    public String getPlace() { return place; }
 
-    public void setPlace(String place) {
-        this.place = place;
-    }
+    public void setPlace(String place) { this.place = place; }
 
-    public int getCapacity() {
-        return Capacity;
-    }
+    public int getCapacity() { return Capacity; }
 
-    public void setCapacity(int capacity) {
-        Capacity = capacity;
-    }
+    public void setCapacity(int capacity) { Capacity = capacity; }
 
-    public int getPrice() {
-        return Price;
-    }
+    public int getPrice() { return Price; }
 
-    public void setPrice(int price) {
-        Price = price;
-    }
+    public void setPrice(int price) { Price = price; }
+
+
+
+
+
 }
