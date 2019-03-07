@@ -1,0 +1,23 @@
+@startuml
+actor Manager as M
+
+activate M
+M -> GUI : Change event info
+activate GUI
+activate Client
+GUI -> Client : Authenticate new info
+Client --> GUI : Error message
+Client --> GUI : Event info
+database Database
+activate Database
+Client -> Database : Update event info
+Database --> Client : Event update sucess
+Database --> Client : Event update failed
+deactivate Database
+Client --> GUI : Update GUI
+GUI --> M : Display updated event
+deactivate Client
+deactivate GUI
+deactivate M
+
+@enduml
