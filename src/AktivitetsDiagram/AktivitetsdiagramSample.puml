@@ -6,6 +6,7 @@ If "Er det ledig plass" then
 --> "Be om betalingskort"
 If "Autentiser kort" then
 --> [Autentisert] "Transaksjon fullført"
+--> "Send kvittering"
 else
 --> [Ikke autentisert] "Transaksjon stoppet"
 Endif
