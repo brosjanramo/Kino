@@ -1,0 +1,20 @@
+@startuml
+'Brukeren klarte å kjøpe bilett uten noen feil
+
+User -> GUI: Kjøp billett
+GUI -> Database: Sjekk for ledige plasser
+Database --> GUI: Feilmelding
+GUI --> User: Ingen ledige plasser
+Database -> GUI: bring opp BetalingsGUI
+GUI -> User: Be om kort informasjon
+User -> GUI: Gir kortinformasjon
+GUI -> TicketControl: Verifiser pris
+TicketControl -> Authentication: Verifiser kort informasjon
+Authentication --> TicketControl: Feilmelding
+TicketControl --> GUI: Feilmelding
+GUI --> User: Kunne ikke trekke fra sum
+
+
+
+
+@enduml
