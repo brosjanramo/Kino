@@ -14,9 +14,33 @@ public class Event {
     private int Capacity;
     private int Price;
 
-    public int getEventId() {
-        return EventId;
+
+    public Event(int eventId, int managerId, int title, LocalDate date, LocalDate agerestrict, String place, int capacity, int price) {
+        EventId = eventId;
+        ManagerId = managerId;
+        Title = title;
+        Date = date;
+        Agerestrict = agerestrict;
+        this.place = place;
+        Capacity = capacity;
+        Price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "EventId=" + EventId +
+                ", ManagerId=" + ManagerId +
+                ", Title=" + Title +
+                ", Date=" + Date +
+                ", Agerestrict=" + Agerestrict +
+                ", place='" + place + '\'' +
+                ", Capacity=" + Capacity +
+                ", Price=" + Price +
+                '}';
+    }
+
+    public int getEventId() { return EventId; }
 
     public void setEventId(int eventId) { EventId = eventId; }
 
