@@ -1,0 +1,16 @@
+@startuml
+
+(*)  --> "Login"
+If "" then
+--> [Failed] "Try again"
+--> "Login"
+else
+--> [Success]"Make Event"
+Endif
+--> "Check available venue"
+--> "Add event to venue"
+--> "Add description to event"
+--> "Publish event"
+-->(*)
+
+@enduml
