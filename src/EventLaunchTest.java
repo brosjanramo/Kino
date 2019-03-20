@@ -12,7 +12,7 @@ public class EventLaunchTest extends Application {
         fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
         Parent eventLayout = fxmlLoader.load();
 
-        Scene eventScene = new Scene(eventLayout,400,200);
+        Scene eventScene = new Scene(eventLayout,400,400);
         primaryStage.setScene(eventScene);
         primaryStage.setTitle("Create Event");
         primaryStage.show();
