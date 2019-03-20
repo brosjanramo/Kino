@@ -26,9 +26,11 @@ public class MainJavaFX extends Application{
 
                 Parent loginLayout = fxmlLoader.load();
 
-                Scene loginScene = new Scene(loginLayout, 1000, 500);
+                Scene loginScene = new Scene(loginLayout, 500, 300);
 
                 primaryStage.setScene(loginScene);
+
+                primaryStage.show();
             }
             catch(IOException e){
                 e.printStackTrace();

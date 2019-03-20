@@ -20,11 +20,9 @@ public class LoginController {
 
     }
 
-    public void loginButtonClicked(ActionEvent actionEvent) {
-
+    public void loginButtonClicked(javafx.event.ActionEvent actionEvent) {
     }
 
-    public void guestButtonClicked(ActionEvent actionEvent) {
-
+    public void guestButtonClicked(javafx.event.ActionEvent actionEvent) {
     }
 }
