@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="javafx.graphics">
+    <CLASSES>
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.graphics.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.base.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx-swt.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.swing.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.controls.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.media.jar!/" />
+      <root url="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.fxml.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.." />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src/main" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oblig1_Algoritmer/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oblig2Algoritmer/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oblig2SoftwareIng/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oblig2SoftwareIng/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oblig2/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/ObligPlantUml/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oving1/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Oving2Algoritmer/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/PostkontoretEksempel/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Rekursjon/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/TestingAvMetoder/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../Skole/TestingAvMetoder/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../Skole/TestingForelesing/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Testing/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../Skole/Trees/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/hjelpOblig2Algoritmer/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/ramihjelp/src" />
+      <root url="file://$PROJECT_DIR$/../../Skole/untitled/src" />
+    </SOURCES>
+  </library>
+</component>

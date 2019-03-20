@@ -1,3 +1,4 @@
+import Model.NumEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,4 +37,29 @@ public class MainJavaFX extends Application{
                 e.printStackTrace();
             }
     }
+
+    public void MakeTickets(NumEvent numTickets){
+
+        try{
+
+            FXMLLoader fxmlLoader= new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("View/TicketCreator.fxml"));
+
+            Parent ticketLayout = fxmlLoader.load();
+            Scene ticketScene= new Scene(ticketLayout, 500,500);
+
+            primaryStage.setScene(ticketScene);
+            primaryStage.setTitle("Make Tickets");
+            primaryStage.show();
+
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
 }
