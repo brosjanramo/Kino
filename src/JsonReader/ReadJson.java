@@ -6,6 +6,10 @@ import org.json.simple.parser.JSONParser;
 import java.io.File;
 import java.io.FileReader;
 
+// Hvis koden er rød gå inn på linken
+// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1
+// Last ned bundle, gå tilbake til intellij, trykk på file, procjekt structure, libaries og trykk på grønn pluss knapp og legg til filen
+
 public class ReadJson {
 
     public static void main(String[] args){
