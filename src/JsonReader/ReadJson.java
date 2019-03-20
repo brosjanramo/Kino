@@ -23,9 +23,12 @@ public class ReadJson {
             FileReader reader = new FileReader(file.getAbsolutePath());
             Object obj = parser.parse(reader);
             JSONObject jsonObj = (JSONObject) obj;
+
+            //Skriver ut all informasjon
             JSONObject personDetails = (JSONObject) jsonObj.get("PersonDetails");
             System.out.println("personDetails :" +personDetails.toJSONString());
 
+            //Skriver ut hver enkelt hver for seg
             String Name = (String)personDetails.get("name");
             System.out.println("Name :"+ Name);
 
