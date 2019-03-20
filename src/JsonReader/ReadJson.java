@@ -1,0 +1,44 @@
+package JsonReader;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.io.File;
+import java.io.FileReader;
+
+public class ReadJson {
+
+    public static void main(String[] args){
+        ClassLoader classLoader = new ReadJson().getClass().getClassLoader();
+        String test1 ="JsonReader/example_1.json";
+        File file = new File(classLoader.getResource(test1).getFile());
+
+        JSONParser parser = new JSONParser();
+
+        try {
+            FileReader reader = new FileReader(file.getAbsolutePath());
+            Object obj = parser.parse(reader);
+            JSONObject jsonObj = (JSONObject) obj;
+            JSONObject personDetails = (JSONObject) jsonObj.get("PersonDetails");
+            System.out.println("personDetails :" +personDetails.toJSONString());
+
+            String Name = (String)personDetails.get("name");
+            System.out.println("Name :"+ Name);
+
+            String personID = (String)personDetails.get("id");
+            System.out.println("PersonID :"+ personID);
+
+            String Birth = (String)personDetails.get("birthdate");
+            System.out.println("Birth :"+ Birth);
+
+            String Mail = (String)personDetails.get("email");
+            System.out.println("Mail :"+ Mail);
+
+            String Number = (String)personDetails.get("phonenumber");
+            System.out.println("Number :"+ Number);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
