@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EventController">
+   <children>
+      <HBox prefHeight="400.0" prefWidth="400.0">
+          <padding><Insets left="20" right="20" top="20" /></padding>
+         <children>
+            <VBox prefHeight="400.0" prefWidth="400.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="121.0" text="Title" textAlignment="CENTER" />
+                  <TextField fx:id="txtTitle" />
+                  <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="21.0" prefWidth="121.0" text="Date" textAlignment="CENTER" />
+                  <DatePicker fx:id="datePicker" />
+                  <Label text="Age restriction" />
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Slider fx:id="agePicker" prefWidth="300.0" showTickLabels="true" />
+                        <TextField fx:id="txtAge" prefWidth="50.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+                  <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="121.0" text="Capacity" textAlignment="CENTER" />
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Slider fx:id="capacityPicker" prefWidth="300.0" showTickLabels="true" />
+                        <TextField fx:id="txtCapacity" prefWidth="50.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+                  <Label contentDisplay="CENTER" layoutX="10.0" layoutY="62.0" prefHeight="21.0" prefWidth="121.0" text="Price" textAlignment="CENTER" />
+                  <TextField fx:id="txtPrice" layoutX="10.0" layoutY="31.0" />
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#btnAddEvent" text="Button" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
