@@ -18,9 +18,9 @@
             <VBox prefHeight="400.0" prefWidth="400.0">
                <children>
                   <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="121.0" text="Title" textAlignment="CENTER" />
-                  <TextField id="txtTitle" />
+                  <TextField fx:id="txtTitle" />
                   <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="21.0" prefWidth="121.0" text="Date" textAlignment="CENTER" />
-                  <DatePicker id="datePicker" />
+                  <DatePicker fx:id="datePicker" />
                   <Label text="Age restriction" />
                   <HBox prefWidth="200.0">
                      <children>
@@ -34,7 +34,7 @@
                   <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="121.0" text="Capacity" textAlignment="CENTER" />
                   <HBox prefWidth="200.0">
                      <children>
-                        <Slider id="capacityPicker" prefWidth="300.0" showTickLabels="true" />
+                        <Slider fx:id="capacityPicker" prefWidth="300.0" showTickLabels="true" />
                         <TextField fx:id="txtCapacity" prefWidth="50.0">
                            <HBox.margin>
                               <Insets left="8.0" />
@@ -42,7 +42,7 @@
                      </children>
                   </HBox>
                   <Label contentDisplay="CENTER" layoutX="10.0" layoutY="62.0" prefHeight="21.0" prefWidth="121.0" text="Price" textAlignment="CENTER" />
-                  <TextField id="txtPrice" layoutX="10.0" layoutY="31.0" />
+                  <TextField fx:id="txtPrice" layoutX="10.0" layoutY="31.0" />
                   <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#btnAddEvent" text="Button" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="8.0" />

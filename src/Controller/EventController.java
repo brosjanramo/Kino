@@ -8,7 +8,7 @@ import javafx.scene.input.MouseEvent;
 
 public class EventController {
     @FXML
-    private TextField txtField;
+    private TextField txtTitle;
     @FXML
     private TextField txtPrice;
     @FXML
@@ -27,6 +27,9 @@ public class EventController {
     public void initialize() {
         agePicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
             txtAge.setText(Integer.toString(newValue.intValue()));
+        }));
+        capacityPicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
+            txtCapacity.setText(Integer.toString(newValue.intValue()));
         }));
     }
 
