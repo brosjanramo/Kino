@@ -13,7 +13,7 @@ public class ReadJson {
 
     public static void main(String[] args){
         ClassLoader classLoader = new ReadJson().getClass().getClassLoader();
-        String test1 ="main/JsonReader/example_1.json";
+        String test1 ="JsonReader/example_1.json";
         File file = new File(classLoader.getResource(test1).getFile());
 
         JSONParser parser = new JSONParser();

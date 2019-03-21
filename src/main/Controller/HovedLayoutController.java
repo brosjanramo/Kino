@@ -1,14 +1,15 @@
 package Controller;
 
+import Model.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 
-import javax.swing.text.html.ListView;
 import java.awt.*;
 
 public class HovedLayoutController {
 
     @FXML
-    private ListView evenList;
+    private ListView<Event> evenList;
 
     @FXML
     private Button btn;
@@ -16,6 +17,7 @@ public class HovedLayoutController {
     @FXML
     public void initialize() {
 
+        //evenList.setItems();
 
     }
 
