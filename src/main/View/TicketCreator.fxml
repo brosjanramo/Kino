@@ -52,10 +52,10 @@
          </font>
       </Label>
       <TextField fx:id="Location" layoutX="300.0" layoutY="234.0" prefHeight="25.0" prefWidth="277.0" />
-      <Spinner layoutX="300.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" />
-      <Spinner layoutX="394.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" />
-      <Spinner layoutX="520.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" />
-      <Label layoutX="463.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" text="Tribune">
+      <Spinner fx:id="seat" layoutX="300.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" />
+      <Spinner fx:id="row" layoutX="394.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" />
+      <Spinner fx:id="tribune" layoutX="520.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" />
+      <Label layoutX="457.0" layoutY="200.0" prefHeight="25.0" prefWidth="57.0" text="Tribune">
          <font>
             <Font size="16.0" />
          </font>
