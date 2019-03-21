@@ -14,7 +14,9 @@ public class NumEvent extends Event {
         Plass = plass;
     }
 
-    void PrintBillett(){
-
+    public NumEvent(int EventId, int MangagerId, String Title, LocalDate Date, int Agerestrict, String place, int Capacity, int Price) {
+        super(Title, Date, Agerestrict, place, Capacity, Price);
     }
+
+
 }
