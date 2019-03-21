@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainJavaFX extends Application{
-    private static MainJavaFX kinoApplication;
+    public static MainJavaFX kinoApplication;
     private Stage primaryStage;
 
     @Override

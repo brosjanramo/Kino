@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 
-import java.awt.event.ActionEvent;
-
 public class LoginController {
     @FXML
     public Button loginButton;
@@ -14,6 +12,7 @@ public class LoginController {
     @FXML
     public PasswordField idField;
 
+
     @FXML
     public void initialize() {
 
@@ -21,8 +20,10 @@ public class LoginController {
     }
 
     public void loginButtonClicked(javafx.event.ActionEvent actionEvent) {
+
     }
 
     public void guestButtonClicked(javafx.event.ActionEvent actionEvent) {
+
     }
 }

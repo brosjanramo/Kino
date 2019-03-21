@@ -43,8 +43,6 @@
                   </HBox>
                   <Label contentDisplay="CENTER" layoutX="10.0" layoutY="62.0" prefHeight="21.0" prefWidth="121.0" text="Price" textAlignment="CENTER" />
                   <TextField fx:id="txtPrice" layoutX="10.0" layoutY="31.0" />
-                  <Label contentDisplay="CENTER" layoutX="10.0" layoutY="236.0" prefHeight="21.0" prefWidth="121.0" text="Location" textAlignment="CENTER" />
-                  <TextField fx:id="txtLocation" layoutX="10.0" layoutY="257.0" />
                   <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#btnAddEvent" text="Button" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="8.0" />
