@@ -33,6 +33,7 @@ public class LoginController {
             @Override
             public void handle(ActionEvent event) {
                 MainJavaFX.getInstance().setHovedLayout();
+
             }
         });
     }
