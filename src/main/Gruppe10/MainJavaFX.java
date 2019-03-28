@@ -1,3 +1,4 @@
+package Gruppe10;
 
 import Gruppe10.Model.NumEvent;
 import javafx.application.Application;
@@ -24,7 +25,7 @@ public class MainJavaFX extends Application{
 
                 FXMLLoader fxmlLoader = new FXMLLoader();
 
-                fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/Login.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("View/Login.fxml"));
 
                 Parent loginLayout = fxmlLoader.load();
 
@@ -87,7 +88,7 @@ public class MainJavaFX extends Application{
 
     }
 
-    /*public static MainJavaFX getInstance(){
+    /*public static Gruppe10.MainJavaFX getInstance(){
         return mainJavaFX;
     }*/
 
