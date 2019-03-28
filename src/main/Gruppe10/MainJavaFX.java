@@ -1,5 +1,6 @@
 package Gruppe10;
 
+import Gruppe10.Controller.HovedLayoutController;
 import Gruppe10.Model.NumEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +41,7 @@ public class MainJavaFX extends Application{
             }
     }
 
-   /* public void setHovedLayout() {
+   public void setHovedLayout() {
         try{
 
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -64,7 +65,7 @@ public class MainJavaFX extends Application{
         catch(IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     public void MakeTickets(NumEvent numTickets){
 
@@ -88,9 +89,9 @@ public class MainJavaFX extends Application{
 
     }
 
-    /*public static Gruppe10.MainJavaFX getInstance(){
+    public static Gruppe10.MainJavaFX getInstance(){
         return mainJavaFX;
-    }*/
+    }
 
 
 }
