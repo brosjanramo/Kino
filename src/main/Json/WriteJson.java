@@ -1,43 +1,34 @@
-package Json;
+package JsonReader;
 
-import Model.Event;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
 
 public class WriteJson {
 
-    public static void main(String[] args){
-        Event testEvent = new Event("Test", LocalDate.now(), 12, "Sted", 42, 120);
-        WriteJson(testEvent);
-    }
+    @SuppressWarnings("unchecked")
+    public static void main (String[] args){
+        JSONObject obj = new JSONObject();
+        obj.put("name", "Test1");
+        obj.put("Mail", "Test@hiof.no");
 
+        JSONArray list = new JSONArray();
+        list.add("sopptur");
+        list.add("konsert");
 
-    public static void WriteJson(Event event){
+        obj.put("Events", list);
 
-
-        GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
-        Gson gson = gsonBuilder.create();
-
-        String jsonEvent = gson.toJson(event);
-
-        try (FileWriter file = new FileWriter("write_example.json")) {
-
-            file.write(jsonEvent);
+        try{
+            FileWriter file = new FileWriter("write.json");
+            file.write(obj.toString());
             file.flush();
-
-        } catch (IOException e) {
+            file.close();
+        }
+        catch (IOException e){
             e.printStackTrace();
         }
-    }
-
-    private static String convertGson(Event event){
-        Gson gson = new Gson();
-        String eventJson = gson.toJson(event);
-        return eventJson;
+        System.out.println(obj);
     }
 }
