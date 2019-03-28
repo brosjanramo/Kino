@@ -23,7 +23,7 @@ public class MainJavaFX extends Application{
 
                 FXMLLoader fxmlLoader = new FXMLLoader();
 
-                fxmlLoader.setLocation(getClass().getResource("View/Login.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("View/HovedLayout.fxml"));
 
                 Parent loginLayout = fxmlLoader.load();
 
