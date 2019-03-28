@@ -12,7 +12,7 @@ public class WriteJson {
     public static void main (String[] args){
         JSONObject obj = new JSONObject();
         obj.put("name", "Test1");
-        obj.put("Mail", "Test@hiof.no");
+        obj.put("Mail", "Test@hiof.pk");
 
         JSONArray list = new JSONArray();
         list.add("sopptur");
@@ -21,7 +21,7 @@ public class WriteJson {
         obj.put("Events", list);
 
         try{
-            FileWriter file = new FileWriter("write.json");
+            FileWriter file = new FileWriter("json/write.json");
             file.write(obj.toString());
             file.flush();
             file.close();
