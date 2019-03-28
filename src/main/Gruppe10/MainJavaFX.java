@@ -1,4 +1,6 @@
+package Gruppe10;
 
+import Gruppe10.Controller.HovedLayoutController;
 import Gruppe10.Model.NumEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,29 +19,34 @@ public class MainJavaFX extends Application{
 
         mainJavaFX = this;
 
-            try{
-                this.primaryStage = primaryStage;
+        setLoginLayout();
 
-                primaryStage.setTitle("Login");
-
-                FXMLLoader fxmlLoader = new FXMLLoader();
-
-                fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/Login.fxml"));
-
-                Parent loginLayout = fxmlLoader.load();
-
-                Scene loginScene = new Scene(loginLayout, 500, 300);
-
-                primaryStage.setScene(loginScene);
-
-                primaryStage.show();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }
     }
 
-   /* public void setHovedLayout() {
+    public void  setLoginLayout() {
+        try{
+            Stage loginStage = new Stage();
+
+            loginStage.setTitle("Login");
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+
+            fxmlLoader.setLocation(getClass().getResource("View/Login.fxml"));
+
+            Parent loginLayout = fxmlLoader.load();
+
+            Scene loginScene = new Scene(loginLayout, 500, 300);
+
+            loginStage.setScene(loginScene);
+
+            loginStage.show();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+   public void setHovedLayout() {
         try{
 
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -63,7 +70,7 @@ public class MainJavaFX extends Application{
         catch(IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     public void MakeTickets(NumEvent numTickets){
 
@@ -87,9 +94,9 @@ public class MainJavaFX extends Application{
 
     }
 
-    /*public static MainJavaFX getInstance(){
+    public static Gruppe10.MainJavaFX getInstance(){
         return mainJavaFX;
-    }*/
+    }
 
 
 }
