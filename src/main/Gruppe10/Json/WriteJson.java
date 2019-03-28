@@ -1,4 +1,4 @@
-package JsonReader;
+package Gruppe10.Json;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
