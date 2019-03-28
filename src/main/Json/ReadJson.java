@@ -1,4 +1,4 @@
-package JsonReader;
+package Json;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,19 +13,17 @@ public class ReadJson {
 
     public static void main(String[] args){
         ClassLoader classLoader = new ReadJson().getClass().getClassLoader();
-        String test1 ="JsonReader/example_1.json";
-        File file = new File(classLoader.getResource(test1).getFile());
 
         JSONParser parser = new JSONParser();
 
-        try {
-            FileReader reader = new FileReader(file.getAbsolutePath());
+        try (FileReader reader = new FileReader("resource/write_example.json")){
+
             Object obj = parser.parse(reader);
             JSONObject jsonObj = (JSONObject) obj;
 
             //Skriver ut all informasjon
             JSONObject personDetails = (JSONObject) jsonObj.get("PersonDetails");
-            System.out.println("personDetails :" +personDetails.toJSONString());
+            //System.out.println("personDetails :" +personDetails.toJSONString());
 
             //Skriver ut hver enkelt hver for seg
             String Name = (String)personDetails.get("name");

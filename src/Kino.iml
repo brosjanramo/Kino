@@ -11,5 +11,6 @@
     <orderEntry type="library" exported="" name="javafx-swt" level="application" />
     <orderEntry type="library" name="json-simple-1.1.11" level="project" />
     <orderEntry type="library" exported="" name="javafxtools-cldc" level="application" />
+    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.8.5" level="project" />
   </component>
 </module>
