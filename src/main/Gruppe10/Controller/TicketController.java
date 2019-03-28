@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class TicketController {
 
@@ -11,22 +13,11 @@ public class TicketController {
     private Button addBtn;
 
     @FXML
-    public void initilize(){
-        addBtn.setOnAction(new EventHandler<ActionEvent>() {
+    private Label out;
 
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("hei");
-            }
-        });
+    @FXML
+    public void addText(ActionEvent actionEvent) {
 
 
     }
-
-
-
-
-
-
-
 }
