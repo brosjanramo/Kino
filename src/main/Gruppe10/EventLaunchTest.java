@@ -11,7 +11,7 @@ public class EventLaunchTest extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/EventLayout.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
         Parent eventLayout = fxmlLoader.load();
 
         Scene eventScene = new Scene(eventLayout,400,400);
