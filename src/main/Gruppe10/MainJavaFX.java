@@ -19,12 +19,15 @@ public class MainJavaFX extends Application{
 
         mainJavaFX = this;
 
+        this.primaryStage = primaryStage;
         setLoginLayout();
 
     }
 
     public void  setLoginLayout() {
         try{
+            this.primaryStage = primaryStage;
+
             Stage loginStage = new Stage();
 
             loginStage.setTitle("Login");
@@ -48,6 +51,7 @@ public class MainJavaFX extends Application{
 
    public void setHovedLayout() {
         try{
+            this.primaryStage = primaryStage;
 
             FXMLLoader fxmlLoader = new FXMLLoader();
 

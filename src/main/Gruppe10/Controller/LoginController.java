@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class LoginController {
     @FXML
@@ -18,7 +19,7 @@ public class LoginController {
     @FXML
     public AnchorPane rootPane;
 
-
+    private Stage loginStage;
 
     @FXML
     public void initialize() {
