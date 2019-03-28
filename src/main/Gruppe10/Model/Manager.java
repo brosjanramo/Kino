@@ -1,4 +1,4 @@
-package Model;
+package Gruppe10.Model;
 
 import java.time.LocalDate;
 

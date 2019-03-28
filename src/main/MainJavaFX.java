@@ -1,4 +1,5 @@
-import Model.NumEvent;
+
+import Gruppe10.Model.NumEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,13 +9,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainJavaFX extends Application{
-    public static MainJavaFX kinoApplication;
+    private static MainJavaFX mainJavaFX;
     private Stage primaryStage;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
 
-        kinoApplication = this;
+        mainJavaFX = this;
 
             try{
                 this.primaryStage = primaryStage;
@@ -23,7 +24,7 @@ public class MainJavaFX extends Application{
 
                 FXMLLoader fxmlLoader = new FXMLLoader();
 
-                fxmlLoader.setLocation(getClass().getResource("View/HovedLayout.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/Login.fxml"));
 
                 Parent loginLayout = fxmlLoader.load();
 
@@ -38,12 +39,38 @@ public class MainJavaFX extends Application{
             }
     }
 
+   /* public void setHovedLayout() {
+        try{
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+
+            fxmlLoader.setLocation(getClass().getResource("View/HovedLayout.fxml"));
+
+            Parent hovedLayout = fxmlLoader.load();
+
+            Stage hovedStage = new Stage();
+
+            hovedStage.initOwner(primaryStage);
+
+            Scene hovedScene = new Scene(hovedLayout);
+
+            hovedStage.setScene(hovedScene);
+
+            HovedLayoutController hovedController = fxmlLoader.getController();
+
+            hovedStage.show();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }*/
+
     public void MakeTickets(NumEvent numTickets){
 
         try{
 
             FXMLLoader fxmlLoader= new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("View/TicketCreator.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/TicketCreator.fxml"));
 
             Parent ticketLayout = fxmlLoader.load();
             Scene ticketScene= new Scene(ticketLayout, 500,500);
@@ -60,6 +87,9 @@ public class MainJavaFX extends Application{
 
     }
 
+    /*public static MainJavaFX getInstance(){
+        return mainJavaFX;
+    }*/
 
 
 }

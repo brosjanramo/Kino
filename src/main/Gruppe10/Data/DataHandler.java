@@ -1,6 +1,6 @@
-package Data;
+package Gruppe10.Data;
 
-import Model.Event;
+import Gruppe10.Model.Event;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

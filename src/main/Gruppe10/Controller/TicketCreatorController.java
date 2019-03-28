@@ -1,4 +1,4 @@
-package Controller;
+package Gruppe10.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;

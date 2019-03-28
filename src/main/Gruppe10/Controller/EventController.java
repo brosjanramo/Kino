@@ -1,6 +1,6 @@
-package Controller;
+package Gruppe10.Controller;
 
-import Model.Event;
+import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;

@@ -1,7 +1,7 @@
-package Controller;
+package Gruppe10.Controller;
 
-import Data.DataHandler;
-import Model.Event;
+import Gruppe10.Data.DataHandler;
+import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
