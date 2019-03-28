@@ -19,26 +19,31 @@ public class MainJavaFX extends Application{
 
         mainJavaFX = this;
 
-            try{
-                this.primaryStage = primaryStage;
+        setLoginLayout();
 
-                primaryStage.setTitle("Login");
+    }
 
-                FXMLLoader fxmlLoader = new FXMLLoader();
+    public void  setLoginLayout() {
+        try{
+            Stage loginStage = new Stage();
 
-                fxmlLoader.setLocation(getClass().getResource("View/Login.fxml"));
+            loginStage.setTitle("Login");
 
-                Parent loginLayout = fxmlLoader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader();
 
-                Scene loginScene = new Scene(loginLayout, 500, 300);
+            fxmlLoader.setLocation(getClass().getResource("View/Login.fxml"));
 
-                primaryStage.setScene(loginScene);
+            Parent loginLayout = fxmlLoader.load();
 
-                primaryStage.show();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }
+            Scene loginScene = new Scene(loginLayout, 500, 300);
+
+            loginStage.setScene(loginScene);
+
+            loginStage.show();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
    public void setHovedLayout() {
