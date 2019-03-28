@@ -6,6 +6,7 @@ import java.time.LocalDate;
 public class Event {
 
     private int eventId;
+    private String description;
     private int managerId;
     private String title;
     private LocalDate date;
@@ -19,7 +20,7 @@ public class Event {
 
 
 
-    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row) {
+    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row, String description) {
         this.title = title;
         this.date = date;
         this.ageRestrict = agerestrict;
@@ -29,6 +30,7 @@ public class Event {
         this.seat = seat;
         this.row = row;
         this.seats = new int[seat][row];
+        this.description = description;
     }
 
     @Override
@@ -95,5 +97,9 @@ public class Event {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

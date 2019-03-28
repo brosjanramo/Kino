@@ -1,8 +1,12 @@
 package Gruppe10.Json;
 
+import Gruppe10.Model.Event;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -30,5 +34,18 @@ public class WriteJson {
             e.printStackTrace();
         }
         System.out.println(obj);
+    }
+
+    public static void addToJson(Event event){
+        // initiate Gson
+        GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
+        Gson gson = gsonBuilder.create();
+        String jsonEvent = gson.toJson(event);
+
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("write.json"))) {
+            bufferedWriter.write(jsonEvent);
+        } catch (IOException ioexc) {
+            System.out.println(ioexc.getMessage());
+        }
     }
 }

@@ -1,5 +1,6 @@
 package Gruppe10.Controller;
 
+import Gruppe10.Json.WriteJson;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -46,8 +47,9 @@ public class EventController {
         int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, agerestrict, place, price, seat, row);
+        Event test = new Event(title, date, agerestrict, place, price, seat, row, "beskrivelse");
 
+        WriteJson.addToJson(test);
         System.out.println(test.toString());
     }
 }

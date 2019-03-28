@@ -11,7 +11,7 @@ public class testEvent {
 
     @BeforeAll
     static void init(){
-        test = new Event("Kino", LocalDate.now(), 18, "Her", 120,20, 20);
+        test = new Event("Kino", LocalDate.now(), 18, "Her", 120,20, 20, "beskrivelse");
     }
     @Test
     public void GetTitleKino(){
