@@ -1,0 +1,9 @@
+{
+    "PersonDetails":{
+        "name": "Test1",
+        "id": "1",
+        "birthdate": "20.03.19",
+        "email": "test@hiof.no",
+        "phonenumber": "99999999"
+    }
+}
