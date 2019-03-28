@@ -13,15 +13,22 @@ public class Event {
     private String place;
     private int capacity;
     private int price;
+    private int seat;
+    private int row;
+    private int seats[][];
 
 
-    public Event(String title, LocalDate date, int agerestrict, String place, int capacity, int price) {
+
+    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row) {
         this.title = title;
         this.date = date;
         this.ageRestrict = agerestrict;
         this.place = place;
-        this.capacity = capacity;
+        this.capacity = seat*row;
         this.price = price;
+        this.seat = seat;
+        this.row = row;
+        this.seats = new int[seat][row];
     }
 
     @Override
@@ -40,10 +47,6 @@ public class Event {
 
     public int getEventId() {
         return eventId;
-    }
-
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
     }
 
     public int getManagerId() {
@@ -90,15 +93,7 @@ public class Event {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 }
