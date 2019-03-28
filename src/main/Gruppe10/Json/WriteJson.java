@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class WriteJson {
 
@@ -34,6 +35,8 @@ public class WriteJson {
             e.printStackTrace();
         }
         System.out.println(obj);
+
+        addToJson(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 2, 2, "beskrivelse"));
     }
 
     public static void addToJson(Event event){
@@ -42,7 +45,7 @@ public class WriteJson {
         Gson gson = gsonBuilder.create();
         String jsonEvent = gson.toJson(event);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("write.json"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("res/write.json"))) {
             bufferedWriter.write(jsonEvent);
         } catch (IOException ioexc) {
             System.out.println(ioexc.getMessage());
