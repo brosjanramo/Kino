@@ -2,6 +2,7 @@ package Json;
 
 import Model.Event;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.json.simple.JSONArray;
 
 import java.io.FileWriter;
@@ -18,13 +19,15 @@ public class WriteJson {
 
     public static void WriteJson(Event event){
 
-        JSONArray employeeList = new JSONArray();
-        employeeList.add(convertGson(event));
-        employeeList.add(convertGson(event));
 
-        try (FileWriter file = new FileWriter("resource/write_example.json")) {
+        GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
+        Gson gson = gsonBuilder.create();
 
-            file.write(employeeList.toJSONString());
+        String jsonEvent = gson.toJson(event);
+
+        try (FileWriter file = new FileWriter("write_example.json")) {
+
+            file.write(jsonEvent);
             file.flush();
 
         } catch (IOException e) {

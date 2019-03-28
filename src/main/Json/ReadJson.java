@@ -16,7 +16,7 @@ public class ReadJson {
 
         JSONParser parser = new JSONParser();
 
-        try (FileReader reader = new FileReader("resource/write_example.json")){
+        try (FileReader reader = new FileReader("write_example.json")){
 
             Object obj = parser.parse(reader);
             JSONObject jsonObj = (JSONObject) obj;
