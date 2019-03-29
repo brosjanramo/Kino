@@ -23,14 +23,11 @@ public class LoginController {
     @FXML
     public AnchorPane rootPane;
 
-    public ArrayList<Person>
 
-    @FXML
     public void initialize() {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (idField.getText() = Person())
                 MainJavaFX.getInstance().setHovedLayout();
             }
         });
