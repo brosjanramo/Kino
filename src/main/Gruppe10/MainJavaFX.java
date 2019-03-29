@@ -19,35 +19,30 @@ public class MainJavaFX extends Application{
 
         mainJavaFX = this;
 
-        setLoginLayout();
-
-    }
-
-    public void  setLoginLayout() {
         try{
-            Stage loginStage = new Stage();
-
-            loginStage.setTitle("Login");
+            this.primaryStage = primaryStage;
 
             FXMLLoader fxmlLoader = new FXMLLoader();
 
             fxmlLoader.setLocation(getClass().getResource("View/Login.fxml"));
 
-            Parent loginLayout = fxmlLoader.load();
+            Parent hovedLayout = fxmlLoader.load();
 
-            Scene loginScene = new Scene(loginLayout, 500, 300);
+            Scene hovedScene = new Scene(hovedLayout);
 
-            loginStage.setScene(loginScene);
+            primaryStage.setScene(hovedScene);
 
-            loginStage.show();
+            primaryStage.show();
         }
         catch(IOException e){
             e.printStackTrace();
         }
+
     }
 
    public void setHovedLayout() {
         try{
+            this.primaryStage = primaryStage;
 
             FXMLLoader fxmlLoader = new FXMLLoader();
 
@@ -55,17 +50,13 @@ public class MainJavaFX extends Application{
 
             Parent hovedLayout = fxmlLoader.load();
 
-            Stage hovedStage = new Stage();
-
-            hovedStage.initOwner(primaryStage);
-
             Scene hovedScene = new Scene(hovedLayout);
 
-            hovedStage.setScene(hovedScene);
+            primaryStage.setScene(hovedScene);
 
             HovedLayoutController hovedController = fxmlLoader.getController();
 
-            hovedStage.show();
+           /* primaryStage.show();*/
         }
         catch(IOException e){
             e.printStackTrace();
