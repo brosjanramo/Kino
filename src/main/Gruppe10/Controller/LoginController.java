@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
@@ -38,6 +39,7 @@ public class LoginController {
             @Override
             public void handle(ActionEvent event) {
                 MainJavaFX.getInstance().setHovedLayout();
+
             }
         });
     }

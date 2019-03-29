@@ -1,5 +1,6 @@
 package Gruppe10.Controller;
 
+import Gruppe10.Json.WriteJson;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -19,11 +20,11 @@ public class EventController {
     @FXML
     private Slider agePicker;
     @FXML
-    private Slider capacityPicker;
-    @FXML
     private TextField txtAge;
     @FXML
-    private TextField txtCapacity;
+    private TextField txtSeat;
+    @FXML
+    private TextField txtRow;
     @FXML
     private TextField txtLocation;
 
@@ -33,9 +34,7 @@ public class EventController {
         agePicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
             txtAge.setText(Integer.toString(newValue.intValue()));
         }));
-        capacityPicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
-            txtCapacity.setText(Integer.toString(newValue.intValue()));
-        }));
+
     }
 
 
@@ -44,11 +43,13 @@ public class EventController {
         int price = Integer.parseInt(txtPrice.getText());
         LocalDate date = datePicker.getValue();
         int agerestrict = (int) Math.round(agePicker.getValue());
+        int seat = Integer.parseInt(txtSeat.getText());
+        int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
-        int capacity = (int) Math.round(capacityPicker.getValue());
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, agerestrict, place, capacity, price);
+        Event test = new Event(title, date, agerestrict, place, price, seat, row, "beskrivelse");
 
+        WriteJson.addToJson(test);
         System.out.println(test.toString());
     }
 }

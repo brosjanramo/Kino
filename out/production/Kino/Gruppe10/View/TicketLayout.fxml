@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
+   <children>
+      <TextField layoutX="387.0" layoutY="35.0" />
+      <TextField layoutX="387.0" layoutY="103.0" />
+      <Label layoutX="361.0" layoutY="69.0" prefHeight="25.0" prefWidth="26.0" text="Age:" />
+      <Label layoutX="349.0" layoutY="35.0" prefHeight="25.0" prefWidth="38.0" text="Name:" />
+      <Label layoutX="336.0" layoutY="103.0" prefHeight="25.0" prefWidth="51.0" text="Location:" />
+      <DatePicker layoutX="387.0" layoutY="69.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>
