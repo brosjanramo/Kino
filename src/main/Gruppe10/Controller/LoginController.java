@@ -32,6 +32,7 @@ public class LoginController {
                 for (int i = 0; i < MainJavaFX.managerList().size(); i++){
                     if (Integer.toString(MainJavaFX.managerList().get(i).getId()).equals(idField.getText())){
                         MainJavaFX.managerList().get(i).getId();
+                        MainJavaFX.setCurrentPassword(MainJavaFX.managerList().get(i).getId());
                         MainJavaFX.getInstance().setHovedLayout();
                     }
                     System.out.println(idField.getText());
@@ -44,7 +45,6 @@ public class LoginController {
             @Override
             public void handle(ActionEvent event) {
                 MainJavaFX.getInstance().setHovedLayout();
-
             }
         });
     }

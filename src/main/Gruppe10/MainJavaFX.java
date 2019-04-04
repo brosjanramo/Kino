@@ -6,6 +6,7 @@ import Gruppe10.Model.Event;
 import Gruppe10.Model.Manager;
 import Gruppe10.Model.NumEvent;
 import Gruppe10.Model.Person;
+import Gruppe10.Model.Event;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class MainJavaFX extends Application{
     private static MainJavaFX mainJavaFX;
     private Stage primaryStage;
+    private static int currentPassword;
 
     @Override
     public void start(Stage primaryStage) {
@@ -124,5 +126,14 @@ public class MainJavaFX extends Application{
         managerArrayList.add(manager1);
         managerArrayList.add(manager2);
         return managerArrayList;
+    }
+
+    public static int getCurrentPassword() {
+        return currentPassword;
+    }
+
+    public static int setCurrentPassword(int currentPassword) {
+        MainJavaFX.currentPassword = currentPassword;
+        return currentPassword;
     }
 }
