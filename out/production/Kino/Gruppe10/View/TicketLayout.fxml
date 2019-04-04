@@ -20,11 +20,11 @@
       <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="43.0" text="Name:" />
       <Label layoutX="373.0" layoutY="104.0" prefHeight="25.0" prefWidth="43.0" text="Age:" />
       <DatePicker fx:id="age" layoutX="413.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label fx:id="event" layoutX="413.0" layoutY="28.0" prefHeight="34.0" prefWidth="149.0">
+      <Label fx:id="eventTitle" layoutX="413.0" layoutY="28.0" prefHeight="34.0" prefWidth="149.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="501.0" layoutY="330.0" mnemonicParsing="false" text="Buy" />
+      <Button fx:id="buy" layoutX="501.0" layoutY="330.0" mnemonicParsing="false" text="Buy" />
    </children>
 </AnchorPane>

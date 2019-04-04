@@ -57,7 +57,7 @@ public class EventController {
 
         ArrayList<Event> arrayList = new ArrayList<>();
         arrayList.add(test);
-        WriteJson.addToJson(arrayList);
+        //WriteJson.addToJson(arrayList);
         System.out.println(test.toString());
     }
 

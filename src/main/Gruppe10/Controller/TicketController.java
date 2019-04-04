@@ -14,7 +14,7 @@ public class TicketController {
     private Button buy;
 
     @FXML
-    private Label event;
+    private Label eventTitle;
 
     @FXML
     private TextField name;
@@ -27,17 +27,13 @@ public class TicketController {
 
 
     @FXML
-    public void initilize(){
-        
+    public void initialize(){
+        eventTitle.setText(DataHandler.getEventData().get(0).getTitle());
+
+        for (int i=0;i<DataHandler.getEventData().get(0).getSeat();i++)
+        seat.getItems().addAll(i);
 
     }
 
 
-
-    @FXML
-    public void addText(ActionEvent actionEvent) {
-
-
-
-    }
 }

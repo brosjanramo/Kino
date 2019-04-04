@@ -23,8 +23,7 @@ public class Event {
 
 
 
-
-    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row,int stand, String description) {
+    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row, int stand, String description) {
         this.title = title;
         this.date = date;
         this.ageRestrict = agerestrict;
@@ -108,4 +107,15 @@ public class Event {
     public String getDescription() {
         return description;
     }
+    public int getSeat() { return seat; }
+
+    public void setSeat(int seat) { this.seat = seat; }
+
+    public int getRow() { return row; }
+
+    public void setRow(int row) { this.row = row; }
+
+    public int getStand() { return stand; }
+
+    public void setStand(int stand) { this.stand = stand; }
 }
