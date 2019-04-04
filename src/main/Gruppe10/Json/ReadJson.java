@@ -33,10 +33,6 @@ public class ReadJson {
             Gson gson = new Gson();
             Type type = new TypeToken<ArrayList<Event>>(){}.getType();
             eventsList = gson.fromJson(jsonObj.toJSONString(), type);
-            for (Event event : eventsList){
-                System.out.println("Contact Details: " +  event.getTitle());
-            }
-
         }catch (Exception e){
             e.printStackTrace();
         }
