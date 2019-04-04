@@ -1,8 +1,6 @@
 package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Model.Event;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -26,9 +24,11 @@ public class TicketController {
     private DatePicker age;
 
 
+    private Event buyTicketEvent;
+
+
     @FXML
     public void initialize(){
-        eventTitle.setText(DataHandler.getEventData().get(0).getTitle());
 
         for (int i=0;i<DataHandler.getEventData().get(0).getSeat();i++)
         seat.getItems().addAll(i);
@@ -41,5 +41,12 @@ public class TicketController {
 
     }
 
+    public void setEventToBeEdited(Event buyTicketEvent) {
+        this.buyTicketEvent = buyTicketEvent;
 
+        if (buyTicketEvent != null) {
+            eventTitle.setText(buyTicketEvent.getTitle());
+
+        }
+    }
 }

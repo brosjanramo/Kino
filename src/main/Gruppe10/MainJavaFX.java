@@ -91,7 +91,7 @@ public class MainJavaFX extends Application{
         }
     }
 
-    public void MakeTickets(NumEvent numTickets){
+    public void MakeTickets(Event ticketEvent){
 
         try{
 
@@ -107,7 +107,8 @@ public class MainJavaFX extends Application{
 
             TicketController ticketController= fxmlLoader.getController();
 
-            ticketController
+            ticketController.setEventToBeEdited(ticketEvent);
+
 
         }
         catch(IOException e) {
