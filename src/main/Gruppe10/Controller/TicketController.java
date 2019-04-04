@@ -1,8 +1,14 @@
 package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Model.Event;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
 
 public class TicketController {
 
@@ -30,6 +36,30 @@ public class TicketController {
     @FXML
     public void initialize(){
 
+        buy.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+
+
+                Period period= Period.between(age.getValue(),LocalDate.now());
+                System.out.println(period.getYears());
+
+                if(period.getYears()<buyTicketEvent.getAgeRestrict()){
+
+                    System.out.println("You are not old Enough");
+                }
+                else{
+
+                    
+
+                }
+
+            }
+        });
+
+
+
     }
 
     public void setEventToBeEdited(Event buyTicketEvent) {
@@ -48,4 +78,6 @@ public class TicketController {
                 stand.getItems().addAll(i+1);
         }
     }
+
+
 }
