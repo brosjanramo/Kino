@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class EventController {
     @FXML
@@ -49,7 +50,9 @@ public class EventController {
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
         Event test = new Event(title, date, agerestrict, place, price, seat, row, "beskrivelse");
 
-        WriteJson.addToJson(test);
+        ArrayList<Event> arrayList = new ArrayList<>();
+        arrayList.add(test);
+        WriteJson.addToJson(arrayList);
         System.out.println(test.toString());
     }
 }

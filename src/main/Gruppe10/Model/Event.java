@@ -1,11 +1,13 @@
 package Gruppe10.Model;
 
+import Gruppe10.Json.ReadJson;
+
 import java.time.LocalDate;
 
 
 public class Event {
 
-    private int eventId;
+    private static int eventId;
     private String description;
     private int managerId;
     private String title;
@@ -21,6 +23,7 @@ public class Event {
 
 
     public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row, String description) {
+        this.eventId++;
         this.title = title;
         this.date = date;
         this.ageRestrict = agerestrict;
@@ -46,6 +49,7 @@ public class Event {
                 ", Price=" + price +
                 '}';*/
     }
+
 
     public int getEventId() {
         return eventId;
