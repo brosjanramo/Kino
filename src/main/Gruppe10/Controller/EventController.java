@@ -24,6 +24,8 @@ public class EventController {
     @FXML
     private TextField txtSeat;
     @FXML
+    private TextField txtStand;
+    @FXML
     private TextField txtRow;
     @FXML
     private TextField txtLocation;
@@ -44,10 +46,11 @@ public class EventController {
         LocalDate date = datePicker.getValue();
         int agerestrict = (int) Math.round(agePicker.getValue());
         int seat = Integer.parseInt(txtSeat.getText());
+        int stand = Integer.parseInt(txtStand.getText());
         int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, agerestrict, place, price, seat, row, "beskrivelse");
+        Event test = new Event(title, date, agerestrict, place, price, seat, row, stand,"beskrivelse");
 
         WriteJson.addToJson(test);
         System.out.println(test.toString());

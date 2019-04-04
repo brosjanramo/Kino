@@ -1,11 +1,14 @@
 package Gruppe10.Controller;
-
+import Gruppe10.Data.DataHandler;
+import Gruppe10.Model.Event;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class TicketController {
+
+
 
     @FXML
     private Button buy;
@@ -25,12 +28,7 @@ public class TicketController {
 
     @FXML
     public void initilize(){
-
-
-
-
-
-
+        
 
     }
 
@@ -38,6 +36,7 @@ public class TicketController {
 
     @FXML
     public void addText(ActionEvent actionEvent) {
+
 
 
     }
