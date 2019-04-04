@@ -17,7 +17,7 @@ public class DataHandler {
     }
 
     private static void generateEventData() {
-        eventList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 100, 100, "beskrivelse"));
+        eventList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 100, 100,4, "beskrivelse"));
     }
 
 }
