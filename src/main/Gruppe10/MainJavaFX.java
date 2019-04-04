@@ -99,7 +99,7 @@ public class MainJavaFX extends Application{
             fxmlLoader.setLocation(getClass().getResource("View/TicketLayout.fxml"));
 
             Parent ticketLayout = fxmlLoader.load();
-            Scene ticketScene= new Scene(ticketLayout, 500,500);
+            Scene ticketScene= new Scene(ticketLayout, 600,500);
 
             primaryStage.setScene(ticketScene);
             primaryStage.setTitle("Make Tickets");
