@@ -23,6 +23,9 @@ public class Event {
 
 
 
+    public Event() {
+
+    }
 
     public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row,int stand, String description) {
         this.title = title;

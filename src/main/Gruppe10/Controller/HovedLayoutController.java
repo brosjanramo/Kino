@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.time.LocalDate;
+
 public class HovedLayoutController {
 
     @FXML
@@ -28,8 +30,8 @@ public class HovedLayoutController {
     @FXML
     private Text titleLabel;
 
-    /*@FXML
-    private TextArea descriptionTextArea;*/
+    @FXML
+    private TextArea descriptionTextArea;
 
     @FXML
     private DatePicker datePicker;
@@ -69,13 +71,35 @@ public class HovedLayoutController {
                 }
             }
         });
+
+        newEvent.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                newEvent(event);
+            }
+        });
     }
 
     private void eventDetails(Event event) {
         titleLabel.setText(event.getTitle());
-        //descriptionTextArea.setText();
+        descriptionTextArea.setText(event.getDescription());
         datePicker.setValue(event.getDate());
         placeTextArea.setText(event.getPlace());
         capacityTextArea.setText(String.valueOf(event.getCapacity()));
+    }
+
+    private void newEvent(ActionEvent actionEvent) {
+        Event newEvent = new Event();
+
+        MainJavaFX.getInstance().setEventLayout(newEvent);
+
+    }
+
+    private void emptyEvent() {
+        titleLabel.setText("");
+        descriptionTextArea.setText("");
+        datePicker.setValue(LocalDate.parse(""));
+        placeTextArea.setText("");
+        capacityTextArea.setText("");
     }
 }

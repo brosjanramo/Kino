@@ -37,7 +37,7 @@ public class WriteJson {
         }
         System.out.println(obj);
 
-        addToJson(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 2, 2, 2,"beskrivelse"));
+        //addToJson(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 2, 2, 2,"beskrivelse"));
     }
 
     public static void addToJson(ArrayList<Event> events){

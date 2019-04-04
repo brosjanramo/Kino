@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
    <children>
       <ComboBox fx:id="stand" layoutX="387.0" layoutY="150.0" prefHeight="25.0" prefWidth="51.0" />
       <ComboBox fx:id="row" layoutX="450.0" layoutY="150.0" prefHeight="25.0" prefWidth="51.0" />
@@ -20,7 +20,7 @@
       <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="43.0" text="Name:" />
       <Label layoutX="373.0" layoutY="104.0" prefHeight="25.0" prefWidth="43.0" text="Age:" />
       <DatePicker fx:id="age" layoutX="413.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label fx:id="event" layoutX="413.0" layoutY="28.0" prefHeight="34.0" prefWidth="149.0">
+      <Label fx:id="event" layoutX="413.0" layoutY="28.0" prefHeight="34.0" prefWidth="149.0" text="Tittel">
          <font>
             <Font size="24.0" />
          </font>

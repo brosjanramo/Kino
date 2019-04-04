@@ -2,6 +2,7 @@ package Gruppe10;
 
 import Gruppe10.Controller.EventController;
 import Gruppe10.Controller.HovedLayoutController;
+import Gruppe10.Model.Event;
 import Gruppe10.Model.Manager;
 import Gruppe10.Model.NumEvent;
 import Gruppe10.Model.Person;
