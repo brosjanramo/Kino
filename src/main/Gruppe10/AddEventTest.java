@@ -1,6 +1,7 @@
 package Gruppe10;
 
 import Gruppe10.Json.ReadJson;
+import Gruppe10.Json.WriteJson;
 import Gruppe10.Model.Event;
 import com.google.gson.stream.JsonReader;
 
@@ -12,6 +13,7 @@ public class AddEventTest {
         ArrayList<Event> arrayList = ReadJson.getList();
         Event event = new Event("Title", LocalDate.now(), 18, "Sted",120, 2,2,2,"Be");
         arrayList.add(event);
+        WriteJson.addToJson(arrayList);
 
         System.out.println("Event Created!");
     }
