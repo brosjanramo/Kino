@@ -96,7 +96,7 @@ public class MainJavaFX extends Application{
         try{
 
             FXMLLoader fxmlLoader= new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/TicketCreator.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("View/TicketLayout.fxml"));
 
             Parent ticketLayout = fxmlLoader.load();
             Scene ticketScene= new Scene(ticketLayout, 500,500);
