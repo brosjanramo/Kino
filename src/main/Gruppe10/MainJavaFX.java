@@ -91,15 +91,15 @@ public class MainJavaFX extends Application{
         }
     }
 
-    public void MakeTickets(Event ticketEvent){
+    public void setTicketLayout(Event ticketEvent){
 
         try{
 
             FXMLLoader fxmlLoader= new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Gruppe10/View/TicketCreator.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("View/TicketLayout.fxml"));
 
             Parent ticketLayout = fxmlLoader.load();
-            Scene ticketScene= new Scene(ticketLayout, 500,500);
+            Scene ticketScene= new Scene(ticketLayout, 600,500);
 
             primaryStage.setScene(ticketScene);
             primaryStage.setTitle("Make Tickets");

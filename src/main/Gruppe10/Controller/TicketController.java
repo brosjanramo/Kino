@@ -30,15 +30,6 @@ public class TicketController {
     @FXML
     public void initialize(){
 
-        for (int i=0;i<DataHandler.getEventData().get(0).getSeat();i++)
-        seat.getItems().addAll(i);
-
-        for (int i=0;i<DataHandler.getEventData().get(0).getRow();i++)
-            row.getItems().addAll(i);
-
-        for (int i=0;i<DataHandler.getEventData().get(0).getStand();i++)
-            stand.getItems().addAll(i);
-
     }
 
     public void setEventToBeEdited(Event buyTicketEvent) {
@@ -47,6 +38,14 @@ public class TicketController {
         if (buyTicketEvent != null) {
             eventTitle.setText(buyTicketEvent.getTitle());
 
+            for (int i=0;i<buyTicketEvent.getSeat();i++)
+                seat.getItems().addAll(i+1);
+
+            for (int i=0;i<buyTicketEvent.getRow();i++)
+                row.getItems().addAll(i+1);
+
+            for (int i=0;i<buyTicketEvent.getStand();i++)
+                stand.getItems().addAll(i+1);
         }
     }
 }
