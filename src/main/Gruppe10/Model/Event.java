@@ -19,11 +19,12 @@ public class Event {
     private int seat;
     private int row;
     private int seats[][];
+    private int stand;
 
 
 
-    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row, String description) {
-        this.eventId++;
+
+    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row,int stand, String description) {
         this.title = title;
         this.date = date;
         this.ageRestrict = agerestrict;
@@ -34,6 +35,7 @@ public class Event {
         this.row = row;
         this.seats = new int[seat][row];
         this.description = description;
+        this.stand=stand;
     }
 
     @Override
