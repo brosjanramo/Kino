@@ -18,7 +18,5 @@ public class TicketLaunchTest extends Application {
         primaryStage.setScene(eventScene);
         primaryStage.setTitle("Create Event");
         primaryStage.show();
-
     }
-
 }

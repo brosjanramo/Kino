@@ -29,6 +29,8 @@ public class EventController {
     private TextField txtLocation;
 
 
+    private Event eventToBeEdited;
+
     @FXML
     public void initialize() {
         agePicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
@@ -51,5 +53,16 @@ public class EventController {
 
         WriteJson.addToJson(test);
         System.out.println(test.toString());
+    }
+
+    public void setEventToBeEdited(Event eventToBeEdited) {
+        this.eventToBeEdited = eventToBeEdited;
+
+        if (eventToBeEdited != null) {
+            txtTitle.setText(eventToBeEdited.getTitle());
+            txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
+            txtLocation.setText(eventToBeEdited.getPlace());
+            txtPrice.setText(String.valueOf(eventToBeEdited.getPrice()));
+        }
     }
 }
