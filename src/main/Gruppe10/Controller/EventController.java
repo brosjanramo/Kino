@@ -10,6 +10,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -67,6 +68,8 @@ public class EventController {
         MainJavaFX.getInstance().setHovedLayout();
 
         System.out.println(test.toString());
+
+        MainJavaFX.getInstance().setHovedLayout();
     }
 
     public void setEventToBeEdited(Event eventToBeEdited) {

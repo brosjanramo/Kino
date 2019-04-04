@@ -6,6 +6,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
+
 public class TicketController {
 
 
@@ -26,19 +30,53 @@ public class TicketController {
     private DatePicker age;
 
 
+    private Event buyTicketEvent;
+
+
     @FXML
     public void initialize(){
-        eventTitle.setText(DataHandler.getEventData().get(0).getTitle());
 
-        for (int i=0;i<DataHandler.getEventData().get(0).getSeat();i++)
-        seat.getItems().addAll(i);
+        buy.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
 
-        for (int i=0;i<DataHandler.getEventData().get(0).getRow();i++)
-            row.getItems().addAll(i);
 
-        for (int i=0;i<DataHandler.getEventData().get(0).getStand();i++)
-            stand.getItems().addAll(i);
 
+                Period period= Period.between(age.getValue(),LocalDate.now());
+                System.out.println(period.getYears());
+
+                if(period.getYears()<buyTicketEvent.getAgeRestrict()){
+
+                    System.out.println("You are not old Enough");
+                }
+                else{
+
+                    
+
+                }
+
+            }
+        });
+
+
+
+    }
+
+    public void setEventToBeEdited(Event buyTicketEvent) {
+        this.buyTicketEvent = buyTicketEvent;
+
+        if (buyTicketEvent != null) {
+            eventTitle.setText(buyTicketEvent.getTitle());
+
+            for (int i=0;i<buyTicketEvent.getSeat();i++)
+                seat.getItems().addAll(i+1);
+
+            for (int i=0;i<buyTicketEvent.getRow();i++)
+                row.getItems().addAll(i+1);
+
+            for (int i=0;i<buyTicketEvent.getStand();i++)
+                stand.getItems().addAll(i+1);
+        }
     }
 
 
