@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.EventController">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.EventController">
    <children>
       <HBox prefHeight="400.0" prefWidth="400.0">
           <padding><Insets left="20" right="20" top="20" /></padding>
@@ -47,6 +47,8 @@
                      </font></Label>
                   <HBox prefWidth="200.0">
                      <children>
+                        <Label text="Stand" />
+                        <TextField fx:id="txtStand" prefHeight="25.0" prefWidth="58.0" />
                         <Label text="Seat">
                            <HBox.margin>
                               <Insets left="22.0" right="18.0" />
