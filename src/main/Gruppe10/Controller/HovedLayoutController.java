@@ -80,7 +80,16 @@ public class HovedLayoutController {
         buyTicketBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                
+                Event buyTicket = eventListView.getSelectionModel().getSelectedItem();
+
+                if (buyTicket != null) {
+                    MainJavaFX.getInstance().setEventLayout();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("No chosen event");
+                    alert.setHeaderText("Please select an event");
+                    alert.showAndWait();
+                }
             }
         });
     }
@@ -97,9 +106,5 @@ public class HovedLayoutController {
         Event newEvent = new Event();
 
         MainJavaFX.getInstance().setEventLayout(newEvent);
-    }
-
-    public void buyTicket(Event event) {
-
     }
 }
