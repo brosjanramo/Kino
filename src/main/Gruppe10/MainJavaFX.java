@@ -2,7 +2,8 @@ package Gruppe10;
 
 import Gruppe10.Controller.EventController;
 import Gruppe10.Controller.HovedLayoutController;
-import Gruppe10.Model.Manager;
+import Gruppe10.Controller.TicketController;
+import Gruppe10.Model.Event;
 import Gruppe10.Model.NumEvent;
 import Gruppe10.Model.Person;
 import Gruppe10.Model.Event;
@@ -105,6 +106,8 @@ public class MainJavaFX extends Application{
             primaryStage.setScene(ticketScene);
             primaryStage.setTitle("Make Tickets");
             primaryStage.show();
+
+            TicketController ticketController= fxmlLoader.getController();
 
         }
         catch(IOException e) {
