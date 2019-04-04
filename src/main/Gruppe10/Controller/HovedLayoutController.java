@@ -83,7 +83,7 @@ public class HovedLayoutController {
                 Event buyTicket = eventListView.getSelectionModel().getSelectedItem();
 
                 if (buyTicket != null) {
-                    MainJavaFX.getInstance().setEventLayout(buyTicket);
+                    MainJavaFX.getInstance().setTicketLayout(buyTicket);
                 } else {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("No chosen event");

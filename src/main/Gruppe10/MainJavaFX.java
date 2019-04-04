@@ -91,7 +91,7 @@ public class MainJavaFX extends Application{
         }
     }
 
-    public void MakeTickets(Event ticketEvent){
+    public void setTicketLayout(Event ticketEvent){
 
         try{
 
