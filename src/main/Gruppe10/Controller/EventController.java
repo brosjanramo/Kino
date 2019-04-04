@@ -1,5 +1,6 @@
 package Gruppe10.Controller;
 
+import Gruppe10.Json.ReadJson;
 import Gruppe10.Json.WriteJson;
 import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
@@ -47,6 +48,7 @@ public class EventController {
 
 
     public void btnAddEvent(MouseEvent mouseEvent) {
+        int managerID = MainJavaFX.getCurrentPassword();
         String title = txtTitle.getText();
         int price = Integer.parseInt(txtPrice.getText());
         LocalDate date = datePicker.getValue();
@@ -56,17 +58,22 @@ public class EventController {
         int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, agerestrict, place, price, seat, row, stand,"beskrivelse");
+        Event test = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
 
-        ArrayList<Event> arrayList = new ArrayList<>();
+        ArrayList<Event> arrayList = ReadJson.getList();
+        
         arrayList.add(test);
-        //WriteJson.addToJson(arrayList);
+        WriteJson.addToJson(arrayList);
+
+        MainJavaFX.getInstance().setHovedLayout();
+
         System.out.println(test.toString());
 
         MainJavaFX.getInstance().setHovedLayout();
     }
 
     public void setEventToBeEdited(Event eventToBeEdited) {
+
         this.eventToBeEdited = eventToBeEdited;
 
         if (eventToBeEdited != null) {

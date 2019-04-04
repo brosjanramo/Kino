@@ -11,9 +11,9 @@ public class DataHandler {
     private final static ObservableList<Event> eventList = FXCollections.observableArrayList();
 
     public static ObservableList<Event> getEventData() {
-        if (eventList.isEmpty()) {
+            eventList.clear();
             eventList.addAll(ReadJson.getList());
-        }
         return eventList;
     }
+
 }
