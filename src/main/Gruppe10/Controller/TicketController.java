@@ -3,17 +3,38 @@ package Gruppe10.Controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class TicketController {
 
     @FXML
-    private Button addBtn;
+    private Button buy;
 
     @FXML
-    private Label out;
+    private Label event;
+
+    @FXML
+    private TextField name;
+
+    @FXML
+    private ComboBox seat,row,stand;
+
+    @FXML
+    private DatePicker age;
+
+
+    @FXML
+    public void initilize(){
+
+
+
+
+
+
+
+    }
+
+
 
     @FXML
     public void addText(ActionEvent actionEvent) {
