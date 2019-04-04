@@ -1,5 +1,6 @@
 package Gruppe10.Json;
 
+import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -38,9 +39,9 @@ public class WriteJson {
         System.out.println(obj);
 
         ArrayList<Event> eventArrayList = new ArrayList<>();
-        eventArrayList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
-        eventArrayList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
-        eventArrayList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
+        eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
+        eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
+        eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
         addToJson(eventArrayList);
     }
 
@@ -50,7 +51,7 @@ public class WriteJson {
         Gson gson = gsonBuilder.create();
         String jsonEvent = gson.toJson(event);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("res/write.json"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("write.json"))) {
             bufferedWriter.write(jsonEvent);
         } catch (IOException ioexc) {
             System.out.println(ioexc.getMessage());

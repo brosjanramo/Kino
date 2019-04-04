@@ -11,15 +11,9 @@ public class DataHandler {
     private final static ObservableList<Event> eventList = FXCollections.observableArrayList();
 
     public static ObservableList<Event> getEventData() {
-        if (eventList.isEmpty()) {
+            eventList.clear();
             eventList.addAll(ReadJson.getList());
-            //generateEventData();
-        }
         return eventList;
-    }
-
-    private static void generateEventData() {
-        eventList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 100, 100,2, "beskrivelse"));
     }
 
 }
