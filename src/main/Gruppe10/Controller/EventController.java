@@ -1,12 +1,15 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Json.WriteJson;
+import Gruppe10.Main;
+import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -59,6 +62,8 @@ public class EventController {
         arrayList.add(test);
         //WriteJson.addToJson(arrayList);
         System.out.println(test.toString());
+
+        MainJavaFX.getInstance().setHovedLayout();
     }
 
     public void setEventToBeEdited(Event eventToBeEdited) {
