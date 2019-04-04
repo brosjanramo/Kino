@@ -14,7 +14,7 @@ public class TicketLaunchTest extends Application {
         fxmlLoader.setLocation(getClass().getResource("View/TicketLayout.fxml"));
         Parent ticketLayout = fxmlLoader.load();
 
-        Scene eventScene = new Scene(ticketLayout, 400, 400);
+        Scene eventScene = new Scene(ticketLayout, 600, 400);
         primaryStage.setScene(eventScene);
         primaryStage.setTitle("Create Event");
         primaryStage.show();
