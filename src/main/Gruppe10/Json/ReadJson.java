@@ -1,5 +1,6 @@
 package Gruppe10.Json;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.io.File;
@@ -12,25 +13,25 @@ import java.io.FileReader;
 public class ReadJson {
 
     public static void main(String[] args){
-        ClassLoader classLoader = new ReadJson().getClass().getClassLoader();
-        String test1 = "Gruppe10/Json/example_1.json";
-        File file = new File(classLoader.getResource(test1).getFile());
+        //ClassLoader classLoader = new ReadJson().getClass().getClassLoader();
 
         JSONParser parser = new JSONParser();
 
-        try {
-            FileReader reader = new FileReader(file.getAbsolutePath());
+        try (FileReader reader = new FileReader("write.json")) {
+
             Object obj = parser.parse(reader);
-            JSONObject jsonObj = (JSONObject) obj;
+            JSONArray jsonObj = (JSONArray) obj;
 
             //Skriver ut all informasjon
-            JSONObject personDetails = (JSONObject) jsonObj.get("PersonDetails");
-            System.out.println("personDetails :" +personDetails.toJSONString());
+            //JSONObject personDetails = (JSONObject) jsonObj.get("eventId");
+            //System.out.println("personDetails :" +personDetails.toJSONString());
+
+            jsonObj.forEach( event -> parseEventObject( (JSONObject) event) );
 
             //Skriver ut hver enkelt hver for seg
-            String Name = (String)personDetails.get("name");
-            System.out.println("Name :"+ Name);
-
+            //String Name = (String)personDetails.get("title");
+            //System.out.println("Name :"+ Name);
+/*
             String personID = (String)personDetails.get("id");
             System.out.println("PersonID :"+ personID);
 
@@ -41,10 +42,20 @@ public class ReadJson {
             System.out.println("Mail :"+ Mail);
 
             String Number = (String)personDetails.get("phonenumber");
-            System.out.println("Number :"+ Number);
+            System.out.println("Number :"+ Number);*/
 
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private static void parseEventObject(JSONObject employee)
+    {
+        //Get employee object within list
+        JSONObject employeeObject = (JSONObject) employee.get("eventId");
+
+        //Get employee first name
+        String firstName = (String) employeeObject.get("title");
+        System.out.println(firstName);
     }
 }

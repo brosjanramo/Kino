@@ -1,11 +1,13 @@
 package Gruppe10.Model;
 
+import Gruppe10.Json.ReadJson;
+
 import java.time.LocalDate;
 
 
 public class Event {
 
-    private int eventId;
+    private static int eventId;
     private String description;
     private int managerId;
     private String title;
@@ -17,10 +19,12 @@ public class Event {
     private int seat;
     private int row;
     private int seats[][];
+    private int stand;
 
 
 
-    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row, String description) {
+
+    public Event(String title, LocalDate date, int agerestrict, String place, int price, int seat, int row,int stand, String description) {
         this.title = title;
         this.date = date;
         this.ageRestrict = agerestrict;
@@ -31,6 +35,7 @@ public class Event {
         this.row = row;
         this.seats = new int[seat][row];
         this.description = description;
+        this.stand=stand;
     }
 
     @Override
@@ -46,6 +51,7 @@ public class Event {
                 ", Price=" + price +
                 '}';*/
     }
+
 
     public int getEventId() {
         return eventId;

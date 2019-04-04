@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class EventController {
     @FXML
@@ -29,6 +30,8 @@ public class EventController {
     private TextField txtLocation;
 
 
+    private Event eventToBeEdited;
+
     @FXML
     public void initialize() {
         agePicker.valueProperty().addListener(((observable, oldValue, newValue) -> {
@@ -47,9 +50,22 @@ public class EventController {
         int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, agerestrict, place, price, seat, row, "beskrivelse");
+        Event test = new Event(title, date, agerestrict, place, price, seat, row, 4, "beskrivelse");
 
-        WriteJson.addToJson(test);
+        ArrayList<Event> arrayList = new ArrayList<>();
+        arrayList.add(test);
+        WriteJson.addToJson(arrayList);
         System.out.println(test.toString());
+    }
+
+    public void setEventToBeEdited(Event eventToBeEdited) {
+        this.eventToBeEdited = eventToBeEdited;
+
+        if (eventToBeEdited != null) {
+            txtTitle.setText(eventToBeEdited.getTitle());
+            txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
+            txtLocation.setText(eventToBeEdited.getPlace());
+            txtPrice.setText(String.valueOf(eventToBeEdited.getPrice()));
+        }
     }
 }
