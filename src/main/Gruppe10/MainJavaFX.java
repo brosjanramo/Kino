@@ -2,9 +2,8 @@ package Gruppe10;
 
 import Gruppe10.Controller.EventController;
 import Gruppe10.Controller.HovedLayoutController;
-import Gruppe10.Model.Manager;
-import Gruppe10.Model.NumEvent;
-import Gruppe10.Model.Person;
+import Gruppe10.Controller.TicketController;
+import Gruppe10.Model.*;
 import Gruppe10.Model.Event;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -92,7 +91,7 @@ public class MainJavaFX extends Application{
         }
     }
 
-    public void MakeTickets(NumEvent numTickets){
+    public void MakeTickets(Event ticketEvent){
 
         try{
 
@@ -105,6 +104,11 @@ public class MainJavaFX extends Application{
             primaryStage.setScene(ticketScene);
             primaryStage.setTitle("Make Tickets");
             primaryStage.show();
+
+            TicketController ticketController= fxmlLoader.getController();
+
+            ticketController.setEventToBeEdited(ticketEvent);
+
 
         }
         catch(IOException e) {

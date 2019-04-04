@@ -17,7 +17,7 @@ public class HovedLayoutController {
     private ListView<Event> eventListView;
 
     @FXML
-    private Button btn;
+    private Button buyTicketBtn;
 
     @FXML
     private Button newEvent;
@@ -28,8 +28,8 @@ public class HovedLayoutController {
     @FXML
     private Text titleLabel;
 
-    /*@FXML
-    private TextArea descriptionTextArea;*/
+    @FXML
+    private TextArea descriptionTextArea;
 
     @FXML
     private DatePicker datePicker;
@@ -76,11 +76,27 @@ public class HovedLayoutController {
                 newEvent(event);
             }
         });
+
+        buyTicketBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Event buyTicket = eventListView.getSelectionModel().getSelectedItem();
+
+                if (buyTicket != null) {
+                    MainJavaFX.getInstance().setEventLayout(buyTicket);
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("No chosen event");
+                    alert.setHeaderText("Please select an event");
+                    alert.showAndWait();
+                }
+            }
+        });
     }
 
     private void eventDetails(Event event) {
         titleLabel.setText(event.getTitle());
-        //descriptionTextArea.setText();
+        descriptionTextArea.setText(event.getDescription());
         datePicker.setValue(event.getDate());
         placeTextArea.setText(event.getPlace());
         capacityTextArea.setText(String.valueOf(event.getCapacity()));
