@@ -44,7 +44,7 @@ public class WriteJson {
         addToJson(eventArrayList);
     }
 
-    public static void addToJson(Event event){
+    public static void addToJson(ArrayList<Event> event){
         // initiate Gson
         GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
         Gson gson = gsonBuilder.create();
