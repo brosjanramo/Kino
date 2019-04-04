@@ -69,6 +69,13 @@ public class HovedLayoutController {
                 }
             }
         });
+
+        newEvent.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                newEvent(event);
+            }
+        });
     }
 
     private void eventDetails(Event event) {
@@ -77,5 +84,11 @@ public class HovedLayoutController {
         datePicker.setValue(event.getDate());
         placeTextArea.setText(event.getPlace());
         capacityTextArea.setText(String.valueOf(event.getCapacity()));
+    }
+
+    public void newEvent(ActionEvent actionEvent) {
+        Event newEvent = new Event();
+
+        MainJavaFX.getInstance().setEventLayout(newEvent);
     }
 }
