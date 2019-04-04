@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class WriteJson {
 
@@ -43,7 +44,7 @@ public class WriteJson {
         addToJson(eventArrayList);
     }
 
-    public static void addToJson(Event event){
+    public static void addToJson(ArrayList<Event> event){
         // initiate Gson
         GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
         Gson gson = gsonBuilder.create();

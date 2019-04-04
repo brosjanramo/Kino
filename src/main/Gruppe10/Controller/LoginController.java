@@ -1,6 +1,7 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
+import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Person;
 import javafx.event.ActionEvent;
@@ -28,15 +29,22 @@ public class LoginController {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                MainJavaFX.getInstance().setHovedLayout();
-            }
+                for (int i = 0; i < MainJavaFX.managerList().size(); i++){
+                    if (Integer.toString(MainJavaFX.managerList().get(i).getId()).equals(idField.getText())){
+                        MainJavaFX.managerList().get(i).getId();
+                        MainJavaFX.setCurrentPassword(MainJavaFX.managerList().get(i).getId());
+                        MainJavaFX.getInstance().setHovedLayout();
+                    }
+                    System.out.println(idField.getText());
+                }
+        }
+
         });
 
         guestButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 MainJavaFX.getInstance().setHovedLayout();
-
             }
         });
     }

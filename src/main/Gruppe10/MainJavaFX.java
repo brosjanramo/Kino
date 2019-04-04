@@ -5,6 +5,8 @@ import Gruppe10.Controller.HovedLayoutController;
 import Gruppe10.Controller.TicketController;
 import Gruppe10.Model.Event;
 import Gruppe10.Model.NumEvent;
+import Gruppe10.Model.Person;
+import Gruppe10.Model.Event;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,15 +14,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class MainJavaFX extends Application{
     private static MainJavaFX mainJavaFX;
     private Stage primaryStage;
+    private static int currentPassword;
 
     @Override
     public void start(Stage primaryStage) {
 
         mainJavaFX = this;
+        System.out.println(managerList().get(0).getId());
 
         try{
             this.primaryStage = primaryStage;
@@ -115,5 +121,21 @@ public class MainJavaFX extends Application{
         return mainJavaFX;
     }
 
+    public static ArrayList<Manager> managerList(){
+        Manager manager1 = new Manager("title", "John Johnsen", 123456, LocalDate.of(1996, 12, 20), "john@hotmail.com", 21436587);
+        Manager manager2 = new Manager("title", "Tom Tom", 654321, LocalDate.of(1996, 12, 20), "tom@hotmail.com", 21436587);
+        ArrayList<Manager> managerArrayList = new ArrayList<>();
+        managerArrayList.add(manager1);
+        managerArrayList.add(manager2);
+        return managerArrayList;
+    }
 
+    public static int getCurrentPassword() {
+        return currentPassword;
+    }
+
+    public static int setCurrentPassword(int currentPassword) {
+        MainJavaFX.currentPassword = currentPassword;
+        return currentPassword;
+    }
 }
