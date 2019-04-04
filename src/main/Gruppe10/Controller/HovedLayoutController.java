@@ -1,14 +1,14 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
+import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 public class HovedLayoutController {
@@ -18,6 +18,12 @@ public class HovedLayoutController {
 
     @FXML
     private Button btn;
+
+    @FXML
+    private Button newEvent;
+
+    @FXML
+    private Button editEvent;
 
     @FXML
     private Text titleLabel;
@@ -44,6 +50,25 @@ public class HovedLayoutController {
                 eventDetails(newValue);
             }
         });
+
+        editEvent.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Event editEvent = eventListView.getSelectionModel().getSelectedItem();
+
+                // Sjekker om eventet inneholder info
+                if (editEvent != null) {
+                    MainJavaFX.getInstance().setEventLayout(editEvent);
+
+
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("No chosen event");
+                    alert.setHeaderText("Please select an event");
+                    alert.showAndWait();
+                }
+            }
+        });
     }
 
     private void eventDetails(Event event) {
@@ -53,5 +78,4 @@ public class HovedLayoutController {
         placeTextArea.setText(event.getPlace());
         capacityTextArea.setText(String.valueOf(event.getCapacity()));
     }
-
 }

@@ -1,6 +1,8 @@
 package Gruppe10;
 
+import Gruppe10.Controller.EventController;
 import Gruppe10.Controller.HovedLayoutController;
+import Gruppe10.Model.Event;
 import Gruppe10.Model.NumEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -59,6 +61,27 @@ public class MainJavaFX extends Application{
            /* primaryStage.show();*/
         }
         catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void setEventLayout(Event eventToBeEdited) {
+        try {
+            this.primaryStage = primaryStage;
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
+            Parent ticketLayout = fxmlLoader.load();
+
+            Scene eventScene = new Scene(ticketLayout, 400, 400);
+            primaryStage.setScene(eventScene);
+            primaryStage.setTitle("Create Event");
+
+            EventController eventController = fxmlLoader.getController();
+
+            eventController.setEventToBeEdited(eventToBeEdited);
+
+            primaryStage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
