@@ -50,7 +50,7 @@ public class WriteJson {
         Gson gson = gsonBuilder.create();
         String jsonEvent = gson.toJson(event);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("res/write.json"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("write.json"))) {
             bufferedWriter.write(jsonEvent);
         } catch (IOException ioexc) {
             System.out.println(ioexc.getMessage());
