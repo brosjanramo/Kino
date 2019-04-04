@@ -3,7 +3,7 @@
     "eventId": 0,
     "description": "beskrivelse",
     "managerId": 0,
-    "title": "Test title",
+    "title": "Test title1",
     "date": {
       "year": 2019,
       "month": 4,
@@ -30,7 +30,7 @@
     "eventId": 0,
     "description": "beskrivelse",
     "managerId": 0,
-    "title": "Test title",
+    "title": "Test title2",
     "date": {
       "year": 2019,
       "month": 4,
@@ -57,7 +57,7 @@
     "eventId": 0,
     "description": "beskrivelse",
     "managerId": 0,
-    "title": "Test title",
+    "title": "Test title3",
     "date": {
       "year": 2019,
       "month": 4,

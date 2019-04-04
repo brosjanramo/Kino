@@ -50,7 +50,7 @@ public class EventController {
         int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, agerestrict, place, price, seat, row, "beskrivelse");
+        Event test = new Event(title, date, agerestrict, place, price, seat, row,0, "beskrivelse");
 
         ArrayList<Event> arrayList = new ArrayList<>();
         arrayList.add(test);

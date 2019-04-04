@@ -1,5 +1,6 @@
 package Gruppe10.Data;
 
+import Gruppe10.Json.ReadJson;
 import Gruppe10.Model.Event;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,13 +12,14 @@ public class DataHandler {
 
     public static ObservableList<Event> getEventData() {
         if (eventList.isEmpty()) {
-            generateEventData();
+            eventList.addAll(ReadJson.getList());
+            //generateEventData();
         }
         return eventList;
     }
 
     private static void generateEventData() {
-        eventList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 100, 100, "beskrivelse"));
+        eventList.add(new Event("Test title", LocalDate.now(), 18, "test sted", 200, 100, 100,2, "beskrivelse"));
     }
 
 }
