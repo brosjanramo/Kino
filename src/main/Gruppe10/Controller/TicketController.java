@@ -33,6 +33,12 @@ public class TicketController {
         for (int i=0;i<DataHandler.getEventData().get(0).getSeat();i++)
         seat.getItems().addAll(i);
 
+        for (int i=0;i<DataHandler.getEventData().get(0).getRow();i++)
+            row.getItems().addAll(i);
+
+        for (int i=0;i<DataHandler.getEventData().get(0).getStand();i++)
+            stand.getItems().addAll(i);
+
     }
 
 
