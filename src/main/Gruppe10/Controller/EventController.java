@@ -41,7 +41,7 @@ public class EventController {
 
 
     private Event eventToBeEdited;
-    private Boolean editNewEvent;
+    private Boolean editNewEvent = false;
 
     @FXML
     public void initialize() {
