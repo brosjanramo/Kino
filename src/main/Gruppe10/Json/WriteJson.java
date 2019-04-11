@@ -18,9 +18,9 @@ public class WriteJson {
     @SuppressWarnings("unchecked")
     public static void main (String[] args){
         ArrayList<Event> eventArrayList = new ArrayList<>();
-        eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
-        eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
-        eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
+        //eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
+        //eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
+        //eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
         addToJson(eventArrayList);
     }
 
@@ -29,7 +29,7 @@ public class WriteJson {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonEvent = gson.toJson(event);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("write.json"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("eventgruppe10.json"))) {
             bufferedWriter.write(jsonEvent);
         } catch (IOException ioexc) {
             System.out.println(ioexc.getMessage());
