@@ -76,7 +76,8 @@ public class HovedLayoutController {
 
                 }
                 else if(newValue=="Date"){
-
+                    Comparator<Event> comparator= Comparator.comparing(Event::getDate);
+                    FXCollections.sort(listWithEvents, comparator);
                 }
 
 
