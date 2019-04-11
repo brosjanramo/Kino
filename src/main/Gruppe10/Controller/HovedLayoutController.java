@@ -50,7 +50,9 @@ public class HovedLayoutController {
 
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
       "Alfabetical",
-              "Date"
+              "Date",
+            "Price",
+            "Capacity"
     );
 
     ObservableList<Event> listWithEvents= FXCollections.observableArrayList();
@@ -78,6 +80,15 @@ public class HovedLayoutController {
                 else if(newValue=="Date"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getDate);
                     FXCollections.sort(listWithEvents, comparator);
+                }
+                else if(newValue=="Price"){
+                    Comparator<Event>comparator= Comparator.comparing(Event::getPrice);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
+                }
+                else if(newValue=="Capacity"){
+                    Comparator<Event>comparator= Comparator.comparingInt(Event::getCapacity);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
+
                 }
 
 
