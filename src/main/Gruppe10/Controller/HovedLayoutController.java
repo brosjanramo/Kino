@@ -5,6 +5,8 @@ import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -41,8 +43,17 @@ public class HovedLayoutController {
     private TextArea capacityTextArea;
 
     @FXML
+    private ComboBox sortBy;
+
+    ObservableList<String> option= FXCollections.observableArrayList(
+      "Alfabetical",
+              "Date"
+    );
+
+    @FXML
     public void initialize() {
         eventListView.setItems(DataHandler.getEventData());
+        sortBy.setItems(option);
 
         eventListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Event>() {
             @Override
