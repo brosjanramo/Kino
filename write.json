@@ -319,8 +319,7 @@
     "place": "Fredrikstad",
     "capacity": 150,
     "seat": 15,
-    "row": 10,
-    "price": 100,
+    "row": 11,
     "seats": [
       [
         0,

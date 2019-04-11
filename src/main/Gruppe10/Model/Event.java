@@ -36,14 +36,14 @@ public class Event {
         this.price = price;
         this.seat = seat;
         this.row = row;
-        this.seats = new int[seat][row];
+        this.seats = new int[row][seat];
         this.description = description;
         this.stand=stand;
     }
 
     @Override
     public String toString() {
-        return "Event: " + getTitle() + " Dato: " + getDate() + " Place: "+ getPlace();/*"Event{" +
+        return getTitle() + " - " + getDate() + " - "+ getPlace() + " - " + getPrice();/*"Event{" +
                 "EventId=" + eventId +
                 ", ManagerId=" + managerId +
                 ", Title=" + title +
@@ -133,10 +133,10 @@ public class Event {
     }
 
     public void setSeats(int seat, int row) {
-        this.seats[seat][row] = 1;
+        this.seats[row][seat] = 1;
     }
 
     public int getSeats(int seat, int row) {
-        return seats[seat][row];
+        return seats[row][seat];
     }
 }
