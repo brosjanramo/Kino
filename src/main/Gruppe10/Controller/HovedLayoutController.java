@@ -47,7 +47,9 @@ public class HovedLayoutController {
         eventListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Event>() {
             @Override
             public void changed(ObservableValue<? extends Event> observable, Event oldValue, Event newValue) {
-                eventDetails(newValue);
+                if (newValue != null) {
+                    eventDetails(newValue);
+                }
             }
         });
 
