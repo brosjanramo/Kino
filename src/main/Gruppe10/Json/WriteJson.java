@@ -17,27 +17,6 @@ public class WriteJson {
 
     @SuppressWarnings("unchecked")
     public static void main (String[] args){
-        JSONObject obj = new JSONObject();
-        obj.put("name", "Test1");
-        obj.put("Mail", "Test@hiof.pk");
-
-        JSONArray list = new JSONArray();
-        list.add("sopptur");
-        list.add("konsert");
-
-        obj.put("Events", list);
-
-        try{
-            FileWriter file = new FileWriter("json/write.json");
-            file.write(obj.toString());
-            file.flush();
-            file.close();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        System.out.println(obj);
-
         ArrayList<Event> eventArrayList = new ArrayList<>();
         eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
         eventArrayList.add(new Event("Test title", LocalDate.now(), MainJavaFX.getCurrentPassword(), 18, "test sted", 200, 2, 2,2, "beskrivelse"));
@@ -47,8 +26,7 @@ public class WriteJson {
 
     public static void addToJson(ArrayList<Event> event){
         // initiate Gson
-        GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
-        Gson gson = gsonBuilder.create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonEvent = gson.toJson(event);
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("write.json"))) {
