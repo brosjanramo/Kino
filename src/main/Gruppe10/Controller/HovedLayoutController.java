@@ -140,6 +140,8 @@ public class HovedLayoutController {
             @Override
             public void handle(ActionEvent event) {
                 newEvent(event);
+                MainJavaFX.getInstance().setNewEventLayout();
+                System.out.println("Ny event");
             }
         });
 
