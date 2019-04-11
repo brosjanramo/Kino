@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -60,9 +61,14 @@ public class HovedLayoutController {
     @FXML
     public void initialize() {
 
-
-
-        listWithEvents.addAll(DataHandler.getEventData());
+        for (int i = 0; i < DataHandler.getEventData().size(); i++){
+            if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
+                listWithEvents.add(DataHandler.getEventData().get(i));
+            }
+        }
+        if (MainJavaFX.getCurrentPassword() == 0){
+            listWithEvents.addAll(DataHandler.getEventData());
+        }
         eventListView.setItems(listWithEvents);
         System.out.println(listWithEvents);
 
