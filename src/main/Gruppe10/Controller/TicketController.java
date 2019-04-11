@@ -47,7 +47,10 @@ public class TicketController {
 
                 if(period.getYears()<buyTicketEvent.getAgeRestrict()){
 
-                    System.out.println("You are not old Enough");
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Too young");
+                    alert.setHeaderText("You are not old enough for this event");
+                    alert.showAndWait();
                 }
                 else{
 
