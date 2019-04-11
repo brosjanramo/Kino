@@ -15,9 +15,9 @@ public class Event {
     private int ageRestrict;
     private String place;
     private int capacity;
-    private int price;
     private int seat;
     private int row;
+    private int price;
     private int seats[][];
     private int stand;
 
@@ -111,15 +111,32 @@ public class Event {
     public String getDescription() {
         return description;
     }
-    public int getSeat() { return seat; }
-
-    public void setSeat(int seat) { this.seat = seat; }
-
-    public int getRow() { return row; }
-
-    public void setRow(int row) { this.row = row; }
 
     public int getStand() { return stand; }
 
     public void setStand(int stand) { this.stand = stand; }
+
+    public int getSeat() {
+        return seat;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setSeat(int seat) {
+        this.seat = seat;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setSeats(int seat, int row) {
+        this.seats[seat][row] = 1;
+    }
+
+    public int getSeats(int seat, int row) {
+        return seats[seat][row];
+    }
 }

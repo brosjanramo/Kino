@@ -11,57 +11,84 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="270.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
-    <VBox alignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
-          AnchorPane.topAnchor="20.0">
+<AnchorPane prefHeight="270.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
+    <VBox alignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <HBox alignment="CENTER">
             <Label fx:id="eventTitle" alignment="CENTER" layoutX="413.0" layoutY="28.0" prefHeight="34.0" text="Test">
                 <font>
-                    <Font size="24.0"/>
+                    <Font size="24.0" />
                 </font>
                 <HBox.margin>
-                    <Insets/>
+                    <Insets />
                 </HBox.margin>
             </Label>
         </HBox>
         <HBox alignment="CENTER">
 
-            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="43.0" text="Name:">
+            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Name:">
                 <HBox.margin>
-                    <Insets right="8.0"/>
+                    <Insets right="8.0" />
                 </HBox.margin>
             </Label>
-            <TextField fx:id="name" layoutX="413.0" layoutY="69.0"/>
+            <TextField fx:id="txtName" layoutX="413.0" layoutY="69.0" />
+        </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="51.0">
+         <children>
+            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Email:">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtEmail" layoutX="413.0" layoutY="69.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="76.0">
+         <children>
+            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Mobil:">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtMobile" layoutX="413.0" layoutY="69.0" />
+         </children>
+      </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="76.0">
+            <children>
+                <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Position:">
+                    <HBox.margin>
+                        <Insets right="8.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="txtPosition" layoutX="413.0" layoutY="69.0" />
+            </children>
         </HBox>
         <HBox alignment="CENTER">
             <VBox>
-                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Stand"/>
-                <ComboBox fx:id="stand" prefHeight="25.0" prefWidth="51.0"/>
+                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Stand" />
+                <ComboBox fx:id="stand" prefHeight="25.0" prefWidth="51.0" />
             </VBox>
             <VBox>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="51.0" text="Row"/>
-                <ComboBox fx:id="row" prefHeight="25.0" prefWidth="51.0"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="51.0" text="Row" />
+                <ComboBox fx:id="row" prefHeight="25.0" prefWidth="51.0" />
                 <HBox.margin>
-                    <Insets left="8.0" right="8.0"/>
+                    <Insets left="8.0" right="8.0" />
                 </HBox.margin>
             </VBox>
             <VBox>
-                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Seat"/>
-                <ComboBox fx:id="seat" prefHeight="25.0" prefWidth="51.0"/>
+                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Seat" />
+                <ComboBox fx:id="seat" prefHeight="25.0" prefWidth="51.0" />
             </VBox>
             <VBox.margin>
-                <Insets bottom="8.0" top="8.0"/>
+                <Insets bottom="8.0" top="8.0" />
             </VBox.margin>
         </HBox>
         <HBox alignment="CENTER">
-            <Label layoutX="373.0" layoutY="104.0" prefHeight="25.0" prefWidth="43.0" text="Age:"/>
-            <DatePicker fx:id="age" layoutX="413.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0"/>
+            <Label layoutX="373.0" layoutY="104.0" prefHeight="25.0" prefWidth="43.0" text="Age:" />
+            <DatePicker fx:id="age" layoutX="413.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0" />
             <VBox.margin>
-                <Insets bottom="8.0"/>
+                <Insets bottom="8.0" />
             </VBox.margin>
         </HBox>
-        <Button fx:id="buy" alignment="BOTTOM_CENTER" layoutX="501.0" layoutY="330.0" mnemonicParsing="false"
-                text="Buy"/>
+        <Button fx:id="buy" alignment="BOTTOM_CENTER" layoutX="501.0" layoutY="330.0" mnemonicParsing="false" text="Buy" />
     </VBox>
 </AnchorPane>
