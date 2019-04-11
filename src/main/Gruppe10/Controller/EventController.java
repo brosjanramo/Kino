@@ -7,10 +7,7 @@ import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -36,6 +33,8 @@ public class EventController {
     private TextField txtRow;
     @FXML
     private TextField txtLocation;
+    @FXML
+    private TextArea txtDescription;
 
 
     private Event eventToBeEdited;
@@ -52,6 +51,7 @@ public class EventController {
     public void btnAddEvent(MouseEvent mouseEvent) {
         int managerID = MainJavaFX.getCurrentPassword();
         String title = txtTitle.getText();
+        String description = txtDescription.getText();
         int price = Integer.parseInt(txtPrice.getText());
         LocalDate date = datePicker.getValue();
         int agerestrict = (int) Math.round(agePicker.getValue());
@@ -63,12 +63,13 @@ public class EventController {
         ArrayList<Event> arrayList = DataHandler.getEventList();
 
         if (!editNewEvent){
-            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
+            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand, description);
             arrayList.add(newEvent);
             System.out.println("New event created");
             WriteJson.addToJson(arrayList);
         } else {
             eventToBeEdited.setTitle(title);
+            eventToBeEdited.setDescription(description);
             eventToBeEdited.setDate(date);
             eventToBeEdited.setAgeRestrict(agerestrict);
             eventToBeEdited.setSeat(seat);

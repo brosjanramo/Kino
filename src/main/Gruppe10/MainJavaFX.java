@@ -76,7 +76,7 @@ public class MainJavaFX extends Application{
             fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
             Parent ticketLayout = fxmlLoader.load();
 
-            Scene eventScene = new Scene(ticketLayout, 400, 400);
+            Scene eventScene = new Scene(ticketLayout);
             primaryStage.setScene(eventScene);
             primaryStage.setTitle("Edit Event");
 
@@ -96,7 +96,7 @@ public class MainJavaFX extends Application{
             fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
             Parent ticketLayout = fxmlLoader.load();
 
-            Scene eventScene = new Scene(ticketLayout, 400, 400);
+            Scene eventScene = new Scene(ticketLayout);
             primaryStage.setScene(eventScene);
             primaryStage.setTitle("Create Event");
 

@@ -112,6 +112,10 @@ public class Event {
         this.price = price;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getDescription() {
         return description;
     }
