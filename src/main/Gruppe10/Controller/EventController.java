@@ -36,8 +36,6 @@ public class EventController {
     private TextField txtRow;
     @FXML
     private TextField txtLocation;
-    @FXML
-    private Button cancelEventCreateBtn;
 
 
     private Event eventToBeEdited;
@@ -50,7 +48,6 @@ public class EventController {
         }));
 
     }
-
 
     public void btnAddEvent(MouseEvent mouseEvent) {
         int managerID = MainJavaFX.getCurrentPassword();
