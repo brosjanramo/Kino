@@ -25,12 +25,42 @@
         </HBox>
         <HBox alignment="CENTER">
 
-            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="43.0" text="Name:">
+            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Name:">
                 <HBox.margin>
                     <Insets right="8.0" />
                 </HBox.margin>
             </Label>
-            <TextField fx:id="name" layoutX="413.0" layoutY="69.0" />
+            <TextField fx:id="txtName" layoutX="413.0" layoutY="69.0" />
+        </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="51.0">
+         <children>
+            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Email:">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtEmail" layoutX="413.0" layoutY="69.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="76.0">
+         <children>
+            <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Mobil:">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtMobile" layoutX="413.0" layoutY="69.0" />
+         </children>
+      </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="76.0">
+            <children>
+                <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="70.0" text="Position:">
+                    <HBox.margin>
+                        <Insets right="8.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="txtPosition" layoutX="413.0" layoutY="69.0" />
+            </children>
         </HBox>
         <HBox alignment="CENTER">
             <VBox>

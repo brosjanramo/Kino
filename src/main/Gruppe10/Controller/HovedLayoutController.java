@@ -64,8 +64,6 @@ public class HovedLayoutController {
 
         listWithEvents.addAll(DataHandler.getEventData());
         eventListView.setItems(listWithEvents);
-        System.out.println(listWithEvents);
-
         sortBy.setItems(sortMethods);
 
         sortBy.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
