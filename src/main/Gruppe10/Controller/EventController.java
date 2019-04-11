@@ -35,6 +35,8 @@ public class EventController {
     private TextField txtLocation;
     @FXML
     private TextField timeOfEvent;
+    @FXML
+    private TextArea txtDescription;
 
 
     private Event eventToBeEdited;
