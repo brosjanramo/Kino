@@ -63,6 +63,10 @@ public class HovedLayoutController {
     public void initialize() {
 
 
+        capacityTextArea.setEditable(false);
+        placeTextArea.setEditable(false);
+        capacityTextArea.setEditable(false);
+        descriptionTextArea.setEditable(false);
 
         listWithEvents.addAll(DataHandler.getEventData());
         eventListView.setItems(listWithEvents);
