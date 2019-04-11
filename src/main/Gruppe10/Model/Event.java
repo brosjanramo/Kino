@@ -43,7 +43,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return getTitle() + " - " + getDate() + " - "+ getPlace() + " - " + getPrice();/*"Event{" +
+        return getTitle()+" - Price: "+ getPrice()+"kr";/*"Event{" +
                 "EventId=" + eventId +
                 ", ManagerId=" + managerId +
                 ", Title=" + title +
