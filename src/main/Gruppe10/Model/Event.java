@@ -4,6 +4,7 @@ import Gruppe10.Json.ReadJson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Time;
 import java.time.LocalDate;
 
 
@@ -14,6 +15,7 @@ public class Event {
     private int managerId;
     private String title;
     private LocalDate date;
+    private int time;
     private int ageRestrict;
     private String place;
     private int capacity;
@@ -29,7 +31,7 @@ public class Event {
 
     }
 
-    public Event(String title, LocalDate date, int managerId, int agerestrict, String place, int price, int seat, int row, int stand, String description) {
+    public Event(String title, LocalDate date, int managerId, int agerestrict, String place, int price, int seat, int row, int stand, String description, int time) {
         this.title = title;
         this.date = date;
         this.managerId = managerId;
@@ -42,6 +44,7 @@ public class Event {
         this.seats = new int[row][seat];
         this.description = description;
         this.stand=stand;
+        this.time=time;
     }
 
     @Override
@@ -115,6 +118,10 @@ public class Event {
         this.price = price;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -155,4 +162,7 @@ public class Event {
         }
         return rowList;
     }
+    public int getTime() { return time; }
+
+    public void setTime(int time) { this.time = time; }
 }

@@ -7,10 +7,7 @@ import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -36,6 +33,10 @@ public class EventController {
     private TextField txtRow;
     @FXML
     private TextField txtLocation;
+    @FXML
+    private TextField timeOfEvent;
+    @FXML
+    private TextArea txtDescription;
 
 
     private Event eventToBeEdited;
@@ -52,23 +53,26 @@ public class EventController {
     public void btnAddEvent(MouseEvent mouseEvent) {
         int managerID = MainJavaFX.getCurrentPassword();
         String title = txtTitle.getText();
+        String description = txtDescription.getText();
         int price = Integer.parseInt(txtPrice.getText());
         LocalDate date = datePicker.getValue();
         int agerestrict = (int) Math.round(agePicker.getValue());
         int seat = Integer.parseInt(txtSeat.getText());
         int stand = Integer.parseInt(txtStand.getText());
         int row = Integer.parseInt(txtRow.getText());
+        int time= Integer.parseInt(timeOfEvent.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
         ArrayList<Event> arrayList = DataHandler.getEventList();
 
         if (!editNewEvent){
-            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
+            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand, description, time);
             arrayList.add(newEvent);
             System.out.println("New event created");
             WriteJson.addToJson(arrayList);
         } else {
             eventToBeEdited.setTitle(title);
+            eventToBeEdited.setDescription(description);
             eventToBeEdited.setDate(date);
             eventToBeEdited.setAgeRestrict(agerestrict);
             eventToBeEdited.setSeat(seat);
@@ -76,6 +80,7 @@ public class EventController {
             eventToBeEdited.setRow(row);
             eventToBeEdited.setPlace(place);
             eventToBeEdited.setPrice(price);
+            eventToBeEdited.setTime(time);
             WriteJson.addToJson(arrayList);
             for (Event event : arrayList) {
                 System.out.println(event);

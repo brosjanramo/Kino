@@ -63,6 +63,8 @@ public class HovedLayoutController {
     @FXML
     public void initialize() {
 
+
+
         for (int i = 0; i < DataHandler.getEventData().size(); i++){
             if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
                 listWithEvents.add(DataHandler.getEventData().get(i));
@@ -106,7 +108,6 @@ public class HovedLayoutController {
 
             }
         });
-
 
         eventListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Event>() {
             @Override

@@ -1,28 +1,27 @@
 [
   {
-    "description": "beskrivelse",
+    "description": "A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father\u0027s death and flees into exile in despair, only to learn in adulthood his ...",
     "managerId": 0,
-    "title": "Go Morgen",
+    "title": "Lion King",
     "date": {
       "year": 2019,
       "month": 4,
-      "day": 12
+      "day": 25
     },
-    "ageRestrict": 0,
-    "place": "This",
-    "capacity": 15,
-    "seat": 5,
-    "row": 3,
-    "price": 10,
+    "time": 18,
+    "ageRestrict": 13,
+    "place": "Fredrikstad",
+    "capacity": 150,
+    "seat": 10,
+    "row": 15,
+    "price": 110,
     "seats": [
       [
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      [
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -32,11 +31,172 @@
       [
         0,
         0,
-        1,
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     ],
-    "stand": 1
+    "stand": 0
   }
 ]
