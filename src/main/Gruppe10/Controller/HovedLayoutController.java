@@ -67,6 +67,7 @@ public class HovedLayoutController {
         placeTextArea.setEditable(false);
         capacityTextArea.setEditable(false);
         descriptionTextArea.setEditable(false);
+        datePicker.setEditable(false);
 
         listWithEvents.addAll(DataHandler.getEventData());
         eventListView.setItems(listWithEvents);
