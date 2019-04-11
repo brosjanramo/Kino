@@ -72,7 +72,6 @@ public class MainJavaFX extends Application{
 
     public void setEventLayout(Event eventToBeEdited) {
         try {
-            this.primaryStage = primaryStage;
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
             Parent ticketLayout = fxmlLoader.load();
@@ -93,7 +92,6 @@ public class MainJavaFX extends Application{
 
     public void setNewEventLayout() {
         try {
-            this.primaryStage = primaryStage;
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("View/EventLayout.fxml"));
             Parent ticketLayout = fxmlLoader.load();
@@ -101,8 +99,6 @@ public class MainJavaFX extends Application{
             Scene eventScene = new Scene(ticketLayout, 400, 400);
             primaryStage.setScene(eventScene);
             primaryStage.setTitle("Create Event");
-
-            EventController eventController = fxmlLoader.getController();
 
             primaryStage.show();
         } catch (IOException e) {
