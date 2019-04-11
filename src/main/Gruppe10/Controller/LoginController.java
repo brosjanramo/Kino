@@ -3,6 +3,8 @@ package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
+import Gruppe10.Model.Event;
+import Gruppe10.Model.Manager;
 import Gruppe10.Model.Person;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -49,6 +51,8 @@ public class LoginController {
         guestButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+
+                String guest=guestButton.getText();
                 MainJavaFX.getInstance().setHovedLayout();
             }
         });
