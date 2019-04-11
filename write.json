@@ -320,6 +320,7 @@
     "capacity": 150,
     "seat": 15,
     "row": 11,
+    "price": 0,
     "seats": [
       [
         0,
