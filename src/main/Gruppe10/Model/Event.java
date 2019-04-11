@@ -1,6 +1,8 @@
 package Gruppe10.Model;
 
 import Gruppe10.Json.ReadJson;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 
@@ -20,6 +22,7 @@ public class Event {
     private int price;
     private int seats[][];
     private int stand;
+
 
 
     public Event() {
@@ -142,5 +145,14 @@ public class Event {
 
     public int getSeats(int seat, int row) {
         return seats[row][seat];
+    }
+
+    public ObservableList<Integer> getRowList(int rows) {
+        ObservableList<Integer> rowList = FXCollections.observableArrayList();
+        for (int i = 0; i < seat; i++){
+            if (seats[rows][i] < 1)
+            rowList.addAll(i + 1);
+        }
+        return rowList;
     }
 }

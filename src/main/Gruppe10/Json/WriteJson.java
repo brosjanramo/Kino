@@ -29,7 +29,7 @@ public class WriteJson {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonEvent = gson.toJson(event);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("eventgruppe10.json"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(EventPath.eventPath))) {
             bufferedWriter.write(jsonEvent);
         } catch (IOException ioexc) {
             System.out.println(ioexc.getMessage());

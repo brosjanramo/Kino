@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "description": "beskrivelse",
+    "managerId": 0,
+    "title": "Go Morgen",
+    "date": {
+      "year": 2019,
+      "month": 4,
+      "day": 12
+    },
+    "ageRestrict": 0,
+    "place": "This",
+    "capacity": 15,
+    "seat": 5,
+    "row": 3,
+    "price": 10,
+    "seats": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stand": 1
+  }
+]

@@ -5,6 +5,9 @@ import Gruppe10.Model.Customer;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import Gruppe10.Model.Ticket;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -68,8 +71,8 @@ public class TicketController {
                     String position = txtPosition.getText();
                     Customer newCustomer = new Customer(name, date, email, phone, position);
 
-                    int seatN = (Integer) seat.getValue();
-                    int rowN = (Integer) row.getValue();
+                    int seatN = (Integer) seat.getValue() - 1;
+                    int rowN = (Integer) row.getValue() - 1;
                     //int standN = (Integer) stand.getValue();
 
                     Ticket newTicket = new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
@@ -78,10 +81,10 @@ public class TicketController {
                     ArrayList<Event> arrayList = DataHandler.getEventList();
                     WriteJson.addToJson(arrayList);
 
-                    for (int I = 0; I < buyTicketEvent.getSeat(); I++){
+                    for (int I = 0; I < buyTicketEvent.getRow(); I++){
                         System.out.println("");
-                        for (int Y = 0; Y < buyTicketEvent.getRow(); Y++){
-                            System.out.print(buyTicketEvent.getSeats(I, Y) + " ");
+                        for (int Y = 0; Y < buyTicketEvent.getSeat(); Y++){
+                            System.out.print(buyTicketEvent.getSeats(Y, I) + " ");
                         }
                     }
                 }
@@ -107,10 +110,24 @@ public class TicketController {
             for (int i=0;i<buyTicketEvent.getRow();i++)
                 row.getItems().addAll(i+1);
 
-            for (int i=0;i<buyTicketEvent.getStand();i++)
+            for (int i=0;i<buyTicketEvent.getStand();i++) {
                 stand.getItems().addAll(i+1);
+            }
+
         }
+
+        row.valueProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue == null) {
+                seat.getItems().clear();
+                seat.setDisable(true);
+            } else {
+                seat.getItems().setAll(buyTicketEvent.getRowList((Integer) newValue - 1));
+                seat.setDisable(false);
+            }
+        });
     }
+
+
 
 
 }
