@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -62,14 +63,14 @@ public class HovedLayoutController {
     @FXML
     public void initialize() {
 
-
-        capacityTextArea.setEditable(false);
-        placeTextArea.setEditable(false);
-        capacityTextArea.setEditable(false);
-        descriptionTextArea.setEditable(false);
-        datePicker.setEditable(false);
-
-        listWithEvents.addAll(DataHandler.getEventData());
+        for (int i = 0; i < DataHandler.getEventData().size(); i++){
+            if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
+                listWithEvents.add(DataHandler.getEventData().get(i));
+            }
+        }
+        if (MainJavaFX.getCurrentPassword() == 0){
+            listWithEvents.addAll(DataHandler.getEventData());
+        }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
 
