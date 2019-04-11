@@ -74,6 +74,12 @@ public class HovedLayoutController {
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
 
+        capacityTextArea.setEditable(false);
+        placeTextArea.setEditable(false);
+        capacityTextArea.setEditable(false);
+        descriptionTextArea.setEditable(false);
+        datePicker.setEditable(false);
+
         sortBy.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
