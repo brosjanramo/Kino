@@ -1,5 +1,6 @@
 package Gruppe10.Controller;
 
+import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.ReadJson;
 import Gruppe10.Json.WriteJson;
 import Gruppe10.Main;
@@ -37,6 +38,7 @@ public class EventController {
 
 
     private Event eventToBeEdited;
+    private Boolean editNewEvent;
 
     @FXML
     public void initialize() {
@@ -58,16 +60,27 @@ public class EventController {
         int row = Integer.parseInt(txtRow.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
-        Event test = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
+        ArrayList<Event> arrayList = DataHandler.getEventList();
 
-        ArrayList<Event> arrayList = ReadJson.getList();
-        
-        arrayList.add(test);
-        WriteJson.addToJson(arrayList);
+        if (!editNewEvent){
+            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
+            arrayList.add(newEvent);
+            WriteJson.addToJson(arrayList);
+        } else {
+            eventToBeEdited.setTitle(title);
+            eventToBeEdited.setDate(date);
+            eventToBeEdited.setAgeRestrict(agerestrict);
+            eventToBeEdited.setSeat(seat);
+            eventToBeEdited.setStand(stand);
+            eventToBeEdited.setRow(row);
+            eventToBeEdited.setPlace(place);
+            WriteJson.addToJson(arrayList);
+            for (Event event : arrayList
+                 ) {
+                System.out.println(event);
+            }
 
-        MainJavaFX.getInstance().setHovedLayout();
-
-        System.out.println(test.toString());
+        }
 
         MainJavaFX.getInstance().setHovedLayout();
     }
@@ -75,12 +88,18 @@ public class EventController {
     public void setEventToBeEdited(Event eventToBeEdited) {
 
         this.eventToBeEdited = eventToBeEdited;
+        this.editNewEvent = true;
 
         if (eventToBeEdited != null) {
             txtTitle.setText(eventToBeEdited.getTitle());
             txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
+            agePicker.setValue(eventToBeEdited.getAgeRestrict());
             txtLocation.setText(eventToBeEdited.getPlace());
             txtPrice.setText(String.valueOf(eventToBeEdited.getPrice()));
+            datePicker.setValue(eventToBeEdited.getDate());
+            txtSeat.setText(String.valueOf(eventToBeEdited.getSeat()));
+            txtRow.setText(String.valueOf(eventToBeEdited.getRow()));
+            txtStand.setText(String.valueOf(eventToBeEdited.getStand()));
         }
     }
 }
