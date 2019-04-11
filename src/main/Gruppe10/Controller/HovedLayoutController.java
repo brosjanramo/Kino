@@ -71,11 +71,12 @@ public class HovedLayoutController {
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 
                 if(newValue=="Alfabetical"){
-                    
+                    Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
+                    FXCollections.sort(listWithEvents, comparator);
 
                 }
                 else if(newValue=="Date"){
-                    System.out.println("D");
+
                 }
 
 
