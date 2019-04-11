@@ -2,6 +2,7 @@ package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.WriteJson;
 import Gruppe10.Model.Customer;
+import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import Gruppe10.Model.Ticket;
 import javafx.event.ActionEvent;
@@ -52,7 +53,10 @@ public class TicketController {
 
                 if(period.getYears()<buyTicketEvent.getAgeRestrict()){
 
-                    System.out.println("You are not old Enough");
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Too young");
+                    alert.setHeaderText("You are not old enough for this event");
+                    alert.showAndWait();
                 }
                 else{
                     String name = txtName.getText();
@@ -83,8 +87,10 @@ public class TicketController {
             }
         });
 
+    }
 
-
+    public void btnCancelTicket() {
+        MainJavaFX.getInstance().setHovedLayout();
     }
 
     public void setEventToBeEdited(Event buyTicketEvent) {

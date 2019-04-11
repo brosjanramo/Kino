@@ -5,11 +5,16 @@ import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class HovedLayoutController {
 
@@ -41,8 +46,55 @@ public class HovedLayoutController {
     private TextArea capacityTextArea;
 
     @FXML
+    private ComboBox sortBy;
+
+    ObservableList<String> sortMethods= FXCollections.observableArrayList(
+      "Alfabetical",
+              "Date",
+            "Price",
+            "Capacity"
+    );
+
+    ObservableList<Event> listWithEvents= FXCollections.observableArrayList();
+
+    @FXML
     public void initialize() {
-        eventListView.setItems(DataHandler.getEventData());
+
+
+
+        listWithEvents.addAll(DataHandler.getEventData());
+        eventListView.setItems(listWithEvents);
+        System.out.println(listWithEvents);
+
+        sortBy.setItems(sortMethods);
+
+        sortBy.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+
+                if(newValue=="Alfabetical"){
+                    Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
+                    FXCollections.sort(listWithEvents, comparator);
+
+                }
+                else if(newValue=="Date"){
+                    Comparator<Event> comparator= Comparator.comparing(Event::getDate);
+                    FXCollections.sort(listWithEvents, comparator);
+                }
+                else if(newValue=="Price"){
+                    Comparator<Event>comparator= Comparator.comparing(Event::getPrice);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
+                }
+                else if(newValue=="Capacity"){
+                    Comparator<Event>comparator= Comparator.comparingInt(Event::getCapacity);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
+
+                }
+
+
+            }
+        });
+
 
         eventListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Event>() {
             @Override
@@ -109,4 +161,6 @@ public class HovedLayoutController {
 
         MainJavaFX.getInstance().setEventLayout(newEvent);
     }
+
+
 }

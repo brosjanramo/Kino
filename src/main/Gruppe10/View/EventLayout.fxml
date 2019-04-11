@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.EventController">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.EventController">
    <children>
       <HBox prefHeight="400.0" prefWidth="400.0">
           <padding><Insets left="20" right="20" top="20" /></padding>
@@ -21,12 +21,18 @@
                   <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="121.0" text="Title" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></Label>
                   <TextField fx:id="txtTitle" />
                   <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="21.0" prefWidth="121.0" text="Date" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></Label>
                   <DatePicker fx:id="datePicker" />
                   <Label text="Age restriction">
                      <font>
@@ -44,40 +50,57 @@
                   <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="121.0" text="Capacity" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Label>
-                  <HBox prefWidth="200.0">
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></Label>
+                  <HBox prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Label text="Stand" />
-                        <TextField fx:id="txtStand" prefHeight="25.0" prefWidth="58.0" />
-                        <Label text="Seat">
+                        <Label maxHeight="1.7976931348623157E308" text="Stand" />
+                        <TextField fx:id="txtStand" prefHeight="25.0" prefWidth="58.0">
                            <HBox.margin>
-                              <Insets left="22.0" right="18.0" />
+                              <Insets left="10.0" />
+                           </HBox.margin></TextField>
+                        <Label maxHeight="1.7976931348623157E308" text="Seat">
+                           <HBox.margin>
+                              <Insets />
                            </HBox.margin></Label>
                         <TextField fx:id="txtSeat" prefWidth="70.0">
                            <HBox.margin>
-                              <Insets right="18.0" />
+                              <Insets left="10.0" />
                            </HBox.margin></TextField>
-                        <Label text="Row" />
+                        <Label maxHeight="1.7976931348623157E308" text="Row" />
                         <TextField fx:id="txtRow" prefWidth="70.0">
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="10.0" />
                            </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <Label contentDisplay="CENTER" layoutX="10.0" layoutY="62.0" prefHeight="21.0" prefWidth="121.0" text="Price" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></Label>
                   <TextField fx:id="txtPrice" layoutX="10.0" layoutY="31.0" />
                   <Label contentDisplay="CENTER" layoutX="10.0" layoutY="236.0" prefHeight="21.0" prefWidth="121.0" text="Location" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Label>
-                  <TextField fx:id="txtLocation" layoutX="10.0" layoutY="257.0" />
-                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#btnAddEvent" text="Button" VBox.vgrow="ALWAYS">
+                     </font>
                      <VBox.margin>
-                        <Insets top="8.0" />
-                     </VBox.margin></Button>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></Label>
+                  <TextField fx:id="txtLocation" layoutX="10.0" layoutY="257.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#btnAddEvent" text="Ok" />
+                        <Button fx:id="cancelEventCreateBtn" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnCloseEvent" text="Cancel" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </HBox>
                </children>
             </VBox>
          </children>

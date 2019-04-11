@@ -7,6 +7,7 @@ import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -35,6 +36,8 @@ public class EventController {
     private TextField txtRow;
     @FXML
     private TextField txtLocation;
+    @FXML
+    private Button cancelEventCreateBtn;
 
 
     private Event eventToBeEdited;
@@ -82,6 +85,10 @@ public class EventController {
 
         }
 
+        MainJavaFX.getInstance().setHovedLayout();
+    }
+
+    public void btnCloseEvent() {
         MainJavaFX.getInstance().setHovedLayout();
     }
 
