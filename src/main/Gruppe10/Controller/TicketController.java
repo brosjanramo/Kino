@@ -44,6 +44,8 @@ public class TicketController {
     @FXML
     public void initialize(){
 
+        age.setEditable(false);
+
         buy.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

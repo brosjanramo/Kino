@@ -3,6 +3,7 @@ package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
+import Gruppe10.Model.Person;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -48,6 +49,7 @@ public class HovedLayoutController {
     @FXML
     private ComboBox sortBy;
 
+    private Person person;
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
       "Alfabetical",
               "Date",
