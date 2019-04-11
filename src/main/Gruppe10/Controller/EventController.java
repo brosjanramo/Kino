@@ -68,6 +68,7 @@ public class EventController {
         if (!editNewEvent){
             Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
             arrayList.add(newEvent);
+            System.out.println("New event created");
             WriteJson.addToJson(arrayList);
         } else {
             eventToBeEdited.setTitle(title);
@@ -78,10 +79,10 @@ public class EventController {
             eventToBeEdited.setRow(row);
             eventToBeEdited.setPlace(place);
             WriteJson.addToJson(arrayList);
-            for (Event event : arrayList
-                 ) {
+            for (Event event : arrayList) {
                 System.out.println(event);
             }
+
 
         }
 
