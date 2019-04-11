@@ -36,6 +36,8 @@ public class EventController {
     private TextField txtRow;
     @FXML
     private TextField txtLocation;
+    @FXML
+    private TextField timeOfEvent;
 
 
     private Event eventToBeEdited;
@@ -58,12 +60,13 @@ public class EventController {
         int seat = Integer.parseInt(txtSeat.getText());
         int stand = Integer.parseInt(txtStand.getText());
         int row = Integer.parseInt(txtRow.getText());
+        int time= Integer.parseInt(timeOfEvent.getText());
         String place = txtLocation.getText();
         //String title, LocalDate date, int agerestrict, String place, int capacity, int price
         ArrayList<Event> arrayList = DataHandler.getEventList();
 
         if (!editNewEvent){
-            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse");
+            Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand,"beskrivelse",time);
             arrayList.add(newEvent);
             System.out.println("New event created");
             WriteJson.addToJson(arrayList);
