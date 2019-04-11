@@ -27,7 +27,7 @@ public class ReadJson {
     private static void readJson(){
         JSONParser parser = new JSONParser();
 
-        try (FileReader reader = new FileReader("write.json")) {
+        try (FileReader reader = new FileReader("eventgruppe10.json")) {
             Object obj = parser.parse(reader);
             JSONArray jsonObj = (JSONArray) obj;
             Gson gson = new Gson();
