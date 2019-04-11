@@ -144,4 +144,8 @@ public class Event {
     public int getSeats(int seat, int row) {
         return seats[row][seat];
     }
+
+    public int getTime() { return time; }
+
+    public void setTime(int time) { this.time = time; }
 }

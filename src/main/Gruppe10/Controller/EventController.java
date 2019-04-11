@@ -79,6 +79,7 @@ public class EventController {
             eventToBeEdited.setRow(row);
             eventToBeEdited.setPlace(place);
             eventToBeEdited.setPrice(price);
+            eventToBeEdited.setTime(time);
             WriteJson.addToJson(arrayList);
             for (Event event : arrayList) {
                 System.out.println(event);
