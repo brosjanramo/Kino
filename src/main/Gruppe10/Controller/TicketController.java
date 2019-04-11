@@ -1,5 +1,6 @@
 package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
+import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -58,8 +59,10 @@ public class TicketController {
             }
         });
 
+    }
 
-
+    public void btnCancelTicket() {
+        MainJavaFX.getInstance().setHovedLayout();
     }
 
     public void setEventToBeEdited(Event buyTicketEvent) {

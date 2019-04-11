@@ -92,8 +92,6 @@ public class HovedLayoutController {
             }
         });
 
-
-
         editEvent.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

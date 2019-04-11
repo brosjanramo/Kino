@@ -11,17 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="270.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
-    <VBox alignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
-          AnchorPane.topAnchor="20.0">
+<AnchorPane prefHeight="270.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gruppe10.Controller.TicketController">
+    <VBox alignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <HBox alignment="CENTER">
             <Label fx:id="eventTitle" alignment="CENTER" layoutX="413.0" layoutY="28.0" prefHeight="34.0" text="Test">
                 <font>
-                    <Font size="24.0"/>
+                    <Font size="24.0" />
                 </font>
                 <HBox.margin>
-                    <Insets/>
+                    <Insets />
                 </HBox.margin>
             </Label>
         </HBox>
@@ -29,39 +27,43 @@
 
             <Label layoutX="367.0" layoutY="73.0" prefHeight="25.0" prefWidth="43.0" text="Name:">
                 <HBox.margin>
-                    <Insets right="8.0"/>
+                    <Insets right="8.0" />
                 </HBox.margin>
             </Label>
-            <TextField fx:id="name" layoutX="413.0" layoutY="69.0"/>
+            <TextField fx:id="name" layoutX="413.0" layoutY="69.0" />
         </HBox>
         <HBox alignment="CENTER">
             <VBox>
-                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Stand"/>
-                <ComboBox fx:id="stand" prefHeight="25.0" prefWidth="51.0"/>
+                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Stand" />
+                <ComboBox fx:id="stand" prefHeight="25.0" prefWidth="51.0" />
             </VBox>
             <VBox>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="51.0" text="Row"/>
-                <ComboBox fx:id="row" prefHeight="25.0" prefWidth="51.0"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="51.0" text="Row" />
+                <ComboBox fx:id="row" prefHeight="25.0" prefWidth="51.0" />
                 <HBox.margin>
-                    <Insets left="8.0" right="8.0"/>
+                    <Insets left="8.0" right="8.0" />
                 </HBox.margin>
             </VBox>
             <VBox>
-                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Seat"/>
-                <ComboBox fx:id="seat" prefHeight="25.0" prefWidth="51.0"/>
+                <Label alignment="CENTER" prefHeight="25.0" prefWidth="51.0" text="Seat" />
+                <ComboBox fx:id="seat" prefHeight="25.0" prefWidth="51.0" />
             </VBox>
             <VBox.margin>
-                <Insets bottom="8.0" top="8.0"/>
+                <Insets bottom="8.0" top="8.0" />
             </VBox.margin>
         </HBox>
         <HBox alignment="CENTER">
-            <Label layoutX="373.0" layoutY="104.0" prefHeight="25.0" prefWidth="43.0" text="Age:"/>
-            <DatePicker fx:id="age" layoutX="413.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0"/>
+            <Label layoutX="373.0" layoutY="104.0" prefHeight="25.0" prefWidth="43.0" text="Age:" />
+            <DatePicker fx:id="age" layoutX="413.0" layoutY="104.0" prefHeight="25.0" prefWidth="149.0" />
             <VBox.margin>
-                <Insets bottom="8.0"/>
+                <Insets bottom="8.0" />
             </VBox.margin>
         </HBox>
-        <Button fx:id="buy" alignment="BOTTOM_CENTER" layoutX="501.0" layoutY="330.0" mnemonicParsing="false"
-                text="Buy"/>
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+              <Button fx:id="buy" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Buy" />
+            <Button fx:id="cancelBuyTicketBtn" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnCancelTicket" text="Cancel" />
+         </children>
+      </HBox>
     </VBox>
 </AnchorPane>
