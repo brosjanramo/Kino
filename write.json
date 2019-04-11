@@ -320,6 +320,7 @@
     "capacity": 150,
     "seat": 15,
     "row": 11,
+    "price": 0,
     "seats": [
       [
         0,
@@ -503,5 +504,59 @@
       ]
     ],
     "stand": 0
+  },
+  {
+    "description": "beskrivelse",
+    "managerId": 0,
+    "title": "John Wick 3",
+    "date": {
+      "year": 2019,
+      "month": 4,
+      "day": 12
+    },
+    "ageRestrict": 19,
+    "place": "Moss",
+    "capacity": 25,
+    "seat": 5,
+    "row": 5,
+    "price": 199,
+    "seats": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "stand": 1
   }
 ]
