@@ -14,11 +14,12 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class HovedLayoutController {
 
     @FXML
-    private ListView<String> eventListView;
+    private ListView<Event> eventListView;
 
     @FXML
     private Button buyTicketBtn;
@@ -52,17 +53,14 @@ public class HovedLayoutController {
               "Date"
     );
 
-    ObservableList<String> listWithEvents= FXCollections.observableArrayList();
+    ObservableList<Event> listWithEvents= FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
 
-        for (int i=0;i<DataHandler.getEventData().size();i++){
 
-            listWithEvents.add(DataHandler.getEventData().get(i).getTitle());
 
-        }
-
+        listWithEvents.addAll(DataHandler.getEventData());
         eventListView.setItems(listWithEvents);
         System.out.println(listWithEvents);
 
@@ -73,6 +71,7 @@ public class HovedLayoutController {
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 
                 if(newValue=="Alfabetical"){
+                    
 
                 }
                 else if(newValue=="Date"){
@@ -151,4 +150,6 @@ public class HovedLayoutController {
 
         MainJavaFX.getInstance().setEventLayout(newEvent);
     }
+
+
 }
