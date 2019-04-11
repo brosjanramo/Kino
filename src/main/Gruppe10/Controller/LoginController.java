@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -23,7 +24,8 @@ public class LoginController {
     public PasswordField idField;
     @FXML
     public AnchorPane rootPane;
-
+    @FXML
+    public Label messageLabel;
 
     public void initialize() {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -34,6 +36,9 @@ public class LoginController {
                         MainJavaFX.managerList().get(i).getId();
                         MainJavaFX.setCurrentPassword(MainJavaFX.managerList().get(i).getId());
                         MainJavaFX.getInstance().setHovedLayout();
+                    }
+                    else{
+                        messageLabel.setText("Wrong ID! Try 123456");
                     }
                     System.out.println(idField.getText());
                 }
