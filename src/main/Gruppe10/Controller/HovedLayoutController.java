@@ -13,10 +13,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
+
 public class HovedLayoutController {
 
     @FXML
-    private ListView<Event> eventListView;
+    private ListView<String> eventListView;
 
     @FXML
     private Button buyTicketBtn;
@@ -45,15 +47,42 @@ public class HovedLayoutController {
     @FXML
     private ComboBox sortBy;
 
-    ObservableList<String> option= FXCollections.observableArrayList(
+    ObservableList<String> sortMethods= FXCollections.observableArrayList(
       "Alfabetical",
               "Date"
     );
 
+    ObservableList<String> listWithEvents= FXCollections.observableArrayList();
+
     @FXML
     public void initialize() {
-        eventListView.setItems(DataHandler.getEventData());
-        sortBy.setItems(option);
+
+        for (int i=0;i<DataHandler.getEventData().size();i++){
+
+            listWithEvents.add(DataHandler.getEventData().get(i).getTitle());
+
+        }
+
+        eventListView.setItems(listWithEvents);
+        System.out.println(listWithEvents);
+
+        sortBy.setItems(sortMethods);
+
+        sortBy.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+
+                if(newValue=="Alfabetical"){
+
+                }
+                else if(newValue=="Date"){
+                    System.out.println("D");
+                }
+
+
+            }
+        });
+
 
         eventListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Event>() {
             @Override
@@ -63,6 +92,8 @@ public class HovedLayoutController {
                 }
             }
         });
+
+
 
         editEvent.setOnAction(new EventHandler<ActionEvent>() {
             @Override
