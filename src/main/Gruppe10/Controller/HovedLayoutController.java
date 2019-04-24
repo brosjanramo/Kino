@@ -185,6 +185,7 @@ public class HovedLayoutController {
             public void handle(ActionEvent event) {
                 Stage primaryStage = MainJavaFX.primaryStage;
                 MainJavaFX.getInstance().start(primaryStage);
+                MainJavaFX.setCurrentPassword(0);
             }
         });
     }
