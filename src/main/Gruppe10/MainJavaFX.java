@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class MainJavaFX extends Application{
     private static MainJavaFX mainJavaFX;
-    private Stage primaryStage;
+    public static Stage primaryStage;
     private static int currentPassword;
 
     @Override
@@ -47,7 +47,7 @@ public class MainJavaFX extends Application{
 
     }
 
-   public void setHovedLayout() {
+    public void setHovedLayout() {
         try{
             this.primaryStage = primaryStage;
 
