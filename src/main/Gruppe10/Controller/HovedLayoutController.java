@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
@@ -32,6 +33,9 @@ public class HovedLayoutController {
 
     @FXML
     private Button editEvent;
+
+    @FXML
+    private Button logOutBtn;
 
     @FXML
     private Text titleLabel;
@@ -162,6 +166,14 @@ public class HovedLayoutController {
                     alert.setHeaderText("Please select an event");
                     alert.showAndWait();
                 }
+            }
+        });
+
+        logOutBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage primaryStage = MainJavaFX.primaryStage;
+                MainJavaFX.getInstance().start(primaryStage);
             }
         });
     }
