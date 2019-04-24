@@ -1,6 +1,7 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
+import Gruppe10.Json.WriteJson;
 import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
@@ -74,12 +75,18 @@ public class HovedLayoutController {
         for (int i = 0; i < DataHandler.getEventData().size(); i++){
             if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
                 listWithEvents.add(DataHandler.getEventData().get(i));
+
             }
         }
         if (MainJavaFX.getCurrentPassword() == 0){
             listWithEvents.addAll(DataHandler.getEventData());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
+        }
+        if (MainJavaFX.getCurrentPassword() == 123456){
+            listWithEvents.addAll(DataHandler.getEventData());
+            newEvent.setVisible(true);
+            editEvent.setVisible(true);
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
@@ -195,4 +202,13 @@ public class HovedLayoutController {
     }
 
 
+    public void onClickDelete(ActionEvent actionEvent) {
+        Event selectedEvent = eventListView.getSelectionModel().getSelectedItem();
+
+        ArrayList<Event> eventList = new ArrayList<>();
+        listWithEvents.remove(selectedEvent);
+        eventList.addAll(listWithEvents);
+
+        WriteJson.addToJson(eventList);
+    }
 }
