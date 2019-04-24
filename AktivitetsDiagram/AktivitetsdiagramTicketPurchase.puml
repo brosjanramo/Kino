@@ -1,0 +1,16 @@
+@startuml
+(*)  --> "Choose Event"
+If "Are there available seats?" then
+--> [Yes] "Show available seats"
+--> "Customer chooses seats"
+--> "Ask for payment"
+If "Start transaction" then
+--> [Transaction Successful] "Transaction completed"
+--> "Send receipt"
+else
+--> [Transaction failed] "Transaction stopped"
+Endif
+else
+--> [No] "No available seats"
+Endif
+@enduml
