@@ -388,5 +388,32 @@
       ]
     ],
     "stand": 0
+  },
+  {
+    "description": "Mævrmannen",
+    "managerId": 123456,
+    "title": "Ant-Man",
+    "date": {
+      "year": 2019,
+      "month": 5,
+      "day": 10
+    },
+    "time": 12,
+    "ageRestrict": 13,
+    "place": "Fredrikstad",
+    "capacity": 5,
+    "seat": 5,
+    "row": 1,
+    "price": 100,
+    "seats": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "stand": 0
   }
 ]
