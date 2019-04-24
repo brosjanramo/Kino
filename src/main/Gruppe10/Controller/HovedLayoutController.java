@@ -15,6 +15,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class HovedLayoutController {
     private Button editEvent;
 
     @FXML
+    private Button logOutBtn;
+
+    @FXML
     private Text titleLabel;
 
     @FXML
@@ -52,7 +56,11 @@ public class HovedLayoutController {
     @FXML
     private ComboBox sortBy;
 
+    @FXML
+    private TextField timeOfEvent;
+
     private Person person;
+
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
       "Alfabetical",
               "Date",
@@ -66,13 +74,19 @@ public class HovedLayoutController {
     public void initialize() {
         for (int i = 0; i < DataHandler.getEventData().size(); i++){
             if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
-                listWithEvents.add(DataHandler.getEventList().get(i));
+                listWithEvents.add(DataHandler.getEventData().get(i));
+
             }
         }
         if (MainJavaFX.getCurrentPassword() == 0){
             listWithEvents.addAll(DataHandler.getEventData());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
+        }
+        if (MainJavaFX.getCurrentPassword() == 123456){
+            listWithEvents.addAll(DataHandler.getEventData());
+            newEvent.setVisible(true);
+            editEvent.setVisible(true);
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
@@ -162,12 +176,21 @@ public class HovedLayoutController {
                 }
             }
         });
+
+        logOutBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage primaryStage = MainJavaFX.primaryStage;
+                MainJavaFX.getInstance().start(primaryStage);
+            }
+        });
     }
 
     private void eventDetails(Event event) {
         titleLabel.setText(event.getTitle());
         descriptionTextArea.setText(event.getDescription());
         datePicker.setValue(event.getDate());
+        timeOfEvent.setText(String.valueOf(event.getTime()));
         placeTextArea.setText(event.getPlace());
         capacityTextArea.setText(String.valueOf(event.getCapacity()));
     }

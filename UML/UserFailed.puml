@@ -1,18 +1,18 @@
 @startuml
-'Brukeren klarte å kjøpe bilett uten noen feil
+'The user couldn't complete the transaction
 
-User -> GUI: Kjøp billett
-GUI -> Database: Sjekk for ledige plasser
-Database --> GUI: Feilmelding
-GUI --> User: Ingen ledige plasser
-Database -> GUI: bring opp BetalingsGUI
-GUI -> User: Be om kort informasjon
-User -> GUI: Gir kortinformasjon
-GUI -> TicketControl: Verifiser pris
-TicketControl -> Authentication: Verifiser kort informasjon
-Authentication --> TicketControl: Feilmelding
-TicketControl --> GUI: Feilmelding
-GUI --> User: Kunne ikke trekke fra sum
+User -> GUI: Buy Ticket
+GUI -> Database: Check for available seats
+Database --> GUI: Error message
+GUI --> User: No available seats
+Database -> GUI: go to payment-GUI
+GUI -> User: Ask for Card information
+User -> GUI: Gives card information
+GUI -> TicketControl: Verify price
+TicketControl -> Authentication: Verify card information
+Authentication --> TicketControl: Error message
+TicketControl --> GUI: Error message
+GUI --> User: Could not withdraw payment
 
 
 
