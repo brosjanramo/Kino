@@ -104,12 +104,14 @@ public class EventController {
         if (eventToBeEdited != null) {
             txtTitle.setText(eventToBeEdited.getTitle());
             txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
+            txtDescription.setText(eventToBeEdited.getDescription());
             agePicker.setValue(eventToBeEdited.getAgeRestrict());
             txtLocation.setText(eventToBeEdited.getPlace());
             txtPrice.setText(String.valueOf(eventToBeEdited.getPrice()));
             datePicker.setValue(eventToBeEdited.getDate());
             txtSeat.setText(String.valueOf(eventToBeEdited.getSeat()));
             txtRow.setText(String.valueOf(eventToBeEdited.getRow()));
+            timeOfEvent.setText(String.valueOf(eventToBeEdited.getTime()));
             txtStand.setText(String.valueOf(eventToBeEdited.getStand()));
         }
     }

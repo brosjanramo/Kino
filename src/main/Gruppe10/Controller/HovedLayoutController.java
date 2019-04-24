@@ -51,6 +51,9 @@ public class HovedLayoutController {
     @FXML
     private ComboBox sortBy;
 
+    @FXML
+    private TextField timeOfEvent;
+
     private Person person;
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
       "Alfabetical",
@@ -167,6 +170,7 @@ public class HovedLayoutController {
         titleLabel.setText(event.getTitle());
         descriptionTextArea.setText(event.getDescription());
         datePicker.setValue(event.getDate());
+        timeOfEvent.setText(String.valueOf(event.getTime()));
         placeTextArea.setText(event.getPlace());
         capacityTextArea.setText(String.valueOf(event.getCapacity()));
     }
