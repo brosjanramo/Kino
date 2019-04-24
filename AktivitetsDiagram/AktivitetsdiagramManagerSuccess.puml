@@ -7,9 +7,12 @@ If "" then
 else
 --> [Success]"Make Event"
 Endif
---> "Check available venue"
---> "Add event to venue"
+--> "Add location"
 --> "Add description to event"
+--> "Add age restriction"
+--> "Add price to event"
+--> "Add time and date"
+--> "Add capacity"
 --> "Publish event"
 -->(*)
 
