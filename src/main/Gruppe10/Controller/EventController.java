@@ -85,10 +85,7 @@ public class EventController {
             for (Event event : arrayList) {
                 System.out.println(event);
             }
-
-
         }
-
         MainJavaFX.getInstance().setHovedLayout();
     }
 
