@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class EventController {
     @FXML
@@ -51,7 +52,7 @@ public class EventController {
     }
 
     public void btnAddEvent(MouseEvent mouseEvent) {
-        int managerID = MainJavaFX.getCurrentPassword();
+
         String title = txtTitle.getText();
         String description = txtDescription.getText();
         int price = Integer.parseInt(txtPrice.getText());
@@ -62,10 +63,10 @@ public class EventController {
         int row = Integer.parseInt(txtRow.getText());
         int time= Integer.parseInt(timeOfEvent.getText());
         String place = txtLocation.getText();
-        //String title, LocalDate date, int agerestrict, String place, int capacity, int price
         ArrayList<Event> arrayList = DataHandler.getEventList();
 
         if (!editNewEvent){
+            int managerID = MainJavaFX.getCurrentPassword();
             Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand, description, time);
             arrayList.add(newEvent);
             System.out.println("New event created");
@@ -81,11 +82,14 @@ public class EventController {
             eventToBeEdited.setPlace(place);
             eventToBeEdited.setPrice(price);
             eventToBeEdited.setTime(time);
-            WriteJson.addToJson(arrayList);
+
+            HovedLayoutController newTest = new HovedLayoutController();
+
+            System.out.println("Event Edit");
+            //WriteJson.addToJson(arrayList);
             for (Event event : arrayList) {
                 System.out.println(event);
             }
-
 
         }
 
@@ -102,6 +106,8 @@ public class EventController {
         this.editNewEvent = true;
 
         if (eventToBeEdited != null) {
+            txtDescription.setText(eventToBeEdited.getDescription());
+            timeOfEvent.setText(String.valueOf(eventToBeEdited.getTime()));
             txtTitle.setText(eventToBeEdited.getTitle());
             txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
             agePicker.setValue(eventToBeEdited.getAgeRestrict());
