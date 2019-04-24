@@ -75,21 +75,21 @@ public class HovedLayoutController {
 
     @FXML
     public void initialize() {
-
-        /*for (int i = 0; i < DataHandler.getEventData().size(); i++){
-            if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
-                listWithEvents.add(DataHandler.getEventData().get(i));
-
-            }
-        }*/
+//        Liste over valgt manager
+//        for (int i = 0; i < DataHandler.getEventData().size(); i++){
+//            if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
+//                listWithEvents.add(DataHandler.getEventData().get(i));
+//
+//            }
+//        }
         if (MainJavaFX.getCurrentPassword() == 0){
-            listWithEvents.addAll(DataHandler.getEventList());
+            listWithEvents.addAll(DataHandler.getEventData());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
             btnDelete.setVisible(false);
         }
         if (MainJavaFX.getCurrentPassword() > 0){
-            listWithEvents.addAll(DataHandler.getEventList());
+            listWithEvents.addAll(DataHandler.getEventData());
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
