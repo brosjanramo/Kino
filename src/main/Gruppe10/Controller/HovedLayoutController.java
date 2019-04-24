@@ -70,12 +70,18 @@ public class HovedLayoutController {
         for (int i = 0; i < DataHandler.getEventData().size(); i++){
             if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
                 listWithEvents.add(DataHandler.getEventData().get(i));
+
             }
         }
         if (MainJavaFX.getCurrentPassword() == 0){
             listWithEvents.addAll(DataHandler.getEventData());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
+        }
+        if (MainJavaFX.getCurrentPassword() == 123456){
+            listWithEvents.addAll(DataHandler.getEventData());
+            newEvent.setVisible(true);
+            editEvent.setVisible(true);
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
