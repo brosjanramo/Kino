@@ -65,10 +65,14 @@ public class HovedLayoutController {
     private Person person;
 
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
-      "Alfabetical",
-              "Date",
-            "Price",
-            "Capacity"
+      "Alfabetical ascending",
+              "Alfabetical descending",
+              "Date ascending",
+            "Date descending",
+            "Price ascending",
+            "Price descending",
+            "Capacity ascending",
+            "Capacity descending"
     );
 
     ObservableList<Event> listWithEvents= FXCollections.observableArrayList();
@@ -104,23 +108,37 @@ public class HovedLayoutController {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 
-                if(newValue=="Alfabetical"){
+                if(newValue=="Alfabetical descending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
                     FXCollections.sort(listWithEvents, comparator);
-
                 }
-                else if(newValue=="Date"){
+                else if(newValue=="Alfabetical ascending"){
+                    Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
+                }
+                else if(newValue=="Date descending"){
+                    Comparator<Event> comparator= Comparator.comparing(Event::getDate);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
+                }
+                else if(newValue=="Date ascending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getDate);
                     FXCollections.sort(listWithEvents, comparator);
                 }
-                else if(newValue=="Price"){
+                else if(newValue=="Price descending"){
                     Comparator<Event>comparator= Comparator.comparing(Event::getPrice);
                     FXCollections.sort(listWithEvents, comparator.reversed());
                 }
-                else if(newValue=="Capacity"){
+                else if(newValue=="Price ascending"){
+                    Comparator<Event>comparator= Comparator.comparing(Event::getPrice);
+                    FXCollections.sort(listWithEvents, comparator);
+                }
+                else if(newValue=="Capacity descending"){
                     Comparator<Event>comparator= Comparator.comparingInt(Event::getCapacity);
                     FXCollections.sort(listWithEvents, comparator.reversed());
-
+                }
+                else if(newValue=="Capacity ascending"){
+                    Comparator<Event>comparator= Comparator.comparingInt(Event::getCapacity);
+                    FXCollections.sort(listWithEvents, comparator);
                 }
 
 
@@ -208,11 +226,9 @@ public class HovedLayoutController {
 
     public void onClickDelete(ActionEvent actionEvent) {
         Event selectedEvent = eventListView.getSelectionModel().getSelectedItem();
-
         ArrayList<Event> eventList = new ArrayList<>();
         listWithEvents.remove(selectedEvent);
         eventList.addAll(listWithEvents);
-
         WriteJson.addToJson(eventList);
     }
 }
