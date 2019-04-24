@@ -70,6 +70,8 @@ public class HovedLayoutController {
         }
         if (MainJavaFX.getCurrentPassword() == 0){
             listWithEvents.addAll(DataHandler.getEventData());
+            newEvent.setVisible(false);
+            editEvent.setVisible(false);
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
