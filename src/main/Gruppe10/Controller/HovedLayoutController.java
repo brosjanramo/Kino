@@ -59,6 +59,9 @@ public class HovedLayoutController {
     @FXML
     private TextField timeOfEvent;
 
+    @FXML
+    private Button btnDelete;
+
     private Person person;
 
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
@@ -72,21 +75,21 @@ public class HovedLayoutController {
 
     @FXML
     public void initialize() {
-        for (int i = 0; i < DataHandler.getEventData().size(); i++){
+
+        /*for (int i = 0; i < DataHandler.getEventData().size(); i++){
             if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
                 listWithEvents.add(DataHandler.getEventData().get(i));
 
             }
-        }
+        }*/
         if (MainJavaFX.getCurrentPassword() == 0){
-            listWithEvents.addAll(DataHandler.getEventData());
+            listWithEvents.addAll(DataHandler.getEventList());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
+            btnDelete.setVisible(false);
         }
-        if (MainJavaFX.getCurrentPassword() == 123456){
-            listWithEvents.addAll(DataHandler.getEventData());
-            newEvent.setVisible(true);
-            editEvent.setVisible(true);
+        if (MainJavaFX.getCurrentPassword() > 0){
+            listWithEvents.addAll(DataHandler.getEventList());
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);

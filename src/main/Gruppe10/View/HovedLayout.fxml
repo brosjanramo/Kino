@@ -55,7 +55,7 @@
             <TextArea fx:id="capacityTextArea" prefHeight="44.0" prefWidth="273.0" />
             <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onClickDelete" text="Delete event" />
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onClickDelete" text="Delete event" />
                   <Button fx:id="newEvent" mnemonicParsing="false" text="New event" />
                   <Button fx:id="editEvent" mnemonicParsing="false" text="Edit Event" />
                   <Button fx:id="logOutBtn" mnemonicParsing="false" text="Log out" />
