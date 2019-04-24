@@ -55,6 +55,7 @@ public class HovedLayoutController {
     private TextField timeOfEvent;
 
     private Person person;
+
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
       "Alfabetical",
               "Date",
