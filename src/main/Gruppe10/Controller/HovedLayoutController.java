@@ -1,6 +1,7 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
+import Gruppe10.Json.WriteJson;
 import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
@@ -14,6 +15,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
@@ -32,6 +34,9 @@ public class HovedLayoutController {
 
     @FXML
     private Button editEvent;
+
+    @FXML
+    private Button logOutBtn;
 
     @FXML
     private Text titleLabel;
@@ -54,6 +59,9 @@ public class HovedLayoutController {
     @FXML
     private TextField timeOfEvent;
 
+    @FXML
+    private Button btnDelete;
+
     private Person person;
 
     ObservableList<String> sortMethods= FXCollections.observableArrayList(
@@ -71,15 +79,21 @@ public class HovedLayoutController {
 
     @FXML
     public void initialize() {
-        for (int i = 0; i < DataHandler.getEventData().size(); i++){
-            if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
-                listWithEvents.add(DataHandler.getEventData().get(i));
-            }
-        }
+//        Liste over valgt manager
+//        for (int i = 0; i < DataHandler.getEventData().size(); i++){
+//            if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
+//                listWithEvents.add(DataHandler.getEventData().get(i));
+//
+//            }
+//        }
         if (MainJavaFX.getCurrentPassword() == 0){
             listWithEvents.addAll(DataHandler.getEventData());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
+            btnDelete.setVisible(false);
+        }
+        if (MainJavaFX.getCurrentPassword() > 0){
+            listWithEvents.addAll(DataHandler.getEventData());
         }
         eventListView.setItems(listWithEvents);
         sortBy.setItems(sortMethods);
@@ -183,6 +197,15 @@ public class HovedLayoutController {
                 }
             }
         });
+
+        logOutBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage primaryStage = MainJavaFX.primaryStage;
+                MainJavaFX.getInstance().start(primaryStage);
+                MainJavaFX.setCurrentPassword(0);
+            }
+        });
     }
 
     private void eventDetails(Event event) {
@@ -201,4 +224,11 @@ public class HovedLayoutController {
     }
 
 
+    public void onClickDelete(ActionEvent actionEvent) {
+        Event selectedEvent = eventListView.getSelectionModel().getSelectedItem();
+        ArrayList<Event> eventList = new ArrayList<>();
+        listWithEvents.remove(selectedEvent);
+        eventList.addAll(listWithEvents);
+        WriteJson.addToJson(eventList);
+    }
 }
