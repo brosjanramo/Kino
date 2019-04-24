@@ -78,6 +78,12 @@ public class TicketController {
                     Ticket newTicket = new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
                     buyTicketEvent.setSeats(seatN, rowN);
 
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Confirmation");
+                    alert.setHeaderText("A mail has been sent to " + txtEmail.getText());
+                    alert.showAndWait();
+                    MainJavaFX.getInstance().setHovedLayout();
+
                     ArrayList<Event> arrayList = DataHandler.getEventList();
                     WriteJson.addToJson(arrayList);
 
