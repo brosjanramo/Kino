@@ -15,14 +15,11 @@ public class sortTest {
 
     //Dette er testdata som jeg bruker til å teste om sorteringsmetodene mine fungerer
     ObservableList<Event> testListWithEvents = FXCollections.observableArrayList();
+    
 
-    LocalDate date1= LocalDate.of(2019,05,05);
-    LocalDate date2= LocalDate.of(2020,05,05);
-    LocalDate date3= LocalDate.of(2021,05,05);
-
-    Event event1= new Event("Ab", date1,1,16,"Oslo",199,10,5,0,"descriotion",2100);
-    Event event2= new Event("Bc", date2,1,16,"Oslo",299,5,5,0,"descriotion",2100);
-    Event event3= new Event("Cd", date3,1,16,"Oslo",399,20,5,0,"descriotion",2100);
+    Event event1= new Event("Ab", LocalDate.of(2019,05,05),1,16,"Oslo",199,10,5,0,"descriotion",2100);
+    Event event2= new Event("Bc", LocalDate.of(2020,05,05),1,16,"Oslo",299,5,5,0,"descriotion",2100);
+    Event event3= new Event("Cd", LocalDate.of(2021,05,05),1,16,"Oslo",399,20,5,0,"descriotion",2100);
 
 
     @Test
