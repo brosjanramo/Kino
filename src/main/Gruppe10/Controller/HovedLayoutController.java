@@ -1,6 +1,7 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
+import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
 import Gruppe10.Model.Person;
@@ -63,6 +64,9 @@ public class HovedLayoutController {
     @FXML
     public void initialize() {
 
+        if(MainJavaFX.getCurrentPassword() == 0) {
+
+        }
 
 
         for (int i = 0; i < DataHandler.getEventData().size(); i++){
