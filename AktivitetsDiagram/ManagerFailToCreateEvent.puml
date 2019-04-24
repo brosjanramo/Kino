@@ -1,0 +1,19 @@
+@startuml
+start
+:Event Created;
+if (title is valid) then (yes)
+    if (date is valid) then (yes)
+        if (location is valid) then (yes)
+            -Event Created
+            end
+        else
+            -Retry, location error
+        endif
+    else
+        -Retry, date error
+    endif
+else
+    -Retry, title error
+endif
+
+@enduml
