@@ -86,7 +86,7 @@ public class EventController {
             HovedLayoutController newTest = new HovedLayoutController();
 
             System.out.println("Event Edit");
-            //WriteJson.addToJson(arrayList);
+            WriteJson.addToJson(arrayList);
             for (Event event : arrayList) {
                 System.out.println(event);
             }
