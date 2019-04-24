@@ -63,12 +63,6 @@ public class HovedLayoutController {
 
     @FXML
     public void initialize() {
-
-        if(MainJavaFX.getCurrentPassword() == 0) {
-
-        }
-
-
         for (int i = 0; i < DataHandler.getEventData().size(); i++){
             if (MainJavaFX.getCurrentPassword() == DataHandler.getEventData().get(i).getManagerId() && MainJavaFX.getCurrentPassword() != 0){
                 listWithEvents.add(DataHandler.getEventData().get(i));
