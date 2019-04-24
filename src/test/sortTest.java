@@ -23,7 +23,7 @@ public class sortTest {
 
 
     @Test
-    public void sortByAlfabeticalDescending(){
+    public void sortByAlfabeticalAscending(){
 
         testListWithEvents.addAll(event1,event2,event3);
 

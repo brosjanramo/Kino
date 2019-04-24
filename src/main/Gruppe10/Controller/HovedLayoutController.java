@@ -110,11 +110,11 @@ public class HovedLayoutController {
 
                 if(newValue=="Alfabetical descending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
-                    FXCollections.sort(listWithEvents, comparator);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
                 }
                 else if(newValue=="Alfabetical ascending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
-                    FXCollections.sort(listWithEvents, comparator.reversed());
+                    FXCollections.sort(listWithEvents, comparator);
                 }
                 else if(newValue=="Date descending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getDate);
