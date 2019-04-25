@@ -72,24 +72,28 @@ public class TicketController {
                     int rowN = (Integer) row.getValue() - 1;
                     //int standN = (Integer) stand.getValue();
 
-                    Ticket newTicket = new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
-                    buyTicketEvent.setSeats(seatN, rowN);
+                    if (buyTicketEvent.getSeats(seatN, rowN) == 0) {
+                        Ticket newTicket = new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
 
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Confirmation");
-                    alert.setHeaderText("A mail has been sent to " + txtEmail.getText());
-                    alert.showAndWait();
-                    MainJavaFX.getInstance().setHovedLayout();
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Confirmation");
+                        alert.setHeaderText("A mail has been sent to " + txtEmail.getText());
+                        alert.showAndWait();
+                        MainJavaFX.getInstance().setHovedLayout();
 
-                    ArrayList<Event> arrayList = DataHandler.getEventList();
-                    WriteJson.addToJson(arrayList);
+                        ArrayList<Event> arrayList = DataHandler.getEventList();
+                        WriteJson.addToJson(arrayList);
 
-                    for (int I = 0; I < buyTicketEvent.getRow(); I++){
-                        System.out.println("");
-                        for (int Y = 0; Y < buyTicketEvent.getSeat(); Y++){
-                            System.out.print(buyTicketEvent.getSeats(Y, I) + " ");
-                        }
+                        buyTicketEvent.printSeats();
+                    } else {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("Your seat has been taken, please choose another one");
+                        alert.showAndWait();
                     }
+
+
+
                 }
 
             }

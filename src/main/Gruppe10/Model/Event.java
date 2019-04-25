@@ -165,4 +165,13 @@ public class Event {
     public int getTime() { return time; }
 
     public void setTime(int time) { this.time = time; }
+
+    public void printSeats() {
+        for (int I = 0; I < row; I++){
+            System.out.println("");
+            for (int Y = 0; Y < seat; Y++){
+                System.out.print(getSeats(Y, I) + " ");
+            }
+        }
+    }
 }
