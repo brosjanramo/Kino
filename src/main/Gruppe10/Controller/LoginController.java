@@ -32,7 +32,7 @@ public class LoginController {
     public void initialize() {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
+            public void handle(ActionEvent event) { //her blir verdien som ble tastet inn sendt videre om den matcher med ID-en til en manager
                 for (int i = 0; i < MainJavaFX.managerList().size(); i++){
                     if (Integer.toString(MainJavaFX.managerList().get(i).getId()).equals(idField.getText())){
                         MainJavaFX.managerList().get(i).getId();

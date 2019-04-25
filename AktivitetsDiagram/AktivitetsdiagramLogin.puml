@@ -1,0 +1,18 @@
+@startuml
+
+    (*) --> if "Choose option" then
+
+      -->[Login] "Type ID"
+          if "Does ID match" then
+        	-> [No] "Wrong ID"
+          else
+        	--> [Yes] "Show manager scene"
+          endif
+
+    else
+
+      ->[Guest] "Show guest scene"
+
+    endif
+
+@enduml

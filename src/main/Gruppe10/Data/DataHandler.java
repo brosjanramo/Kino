@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataHandler {
+public class DataHandler { //Her lages en Observable list som kan knyttes opp mot listView i HovedLayout
     private final static ObservableList<Event> eventList = FXCollections.observableArrayList();
 
     public static ObservableList<Event> getEventData() {
