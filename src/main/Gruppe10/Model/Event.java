@@ -26,7 +26,6 @@ public class Event {
     private int stand;
 
 
-
     public Event() {
 
     }
@@ -37,19 +36,19 @@ public class Event {
         this.managerId = managerId;
         this.ageRestrict = agerestrict;
         this.place = place;
-        this.capacity = seat*row;
+        this.capacity = seat * row;
         this.price = price;
         this.seat = seat;
         this.row = row;
         this.seats = new int[row][seat];
         this.description = description;
-        this.stand=stand;
-        this.time=time;
+        this.stand = stand;
+        this.time = time;
     }
 
     @Override
     public String toString() {
-        return getTitle()+" - Price: "+ getPrice()+"kr";/*"Event{" +
+        return getTitle() + " - Price: " + getPrice() + "kr";/*"Event{" +
                 "EventId=" + eventId +
                 ", ManagerId=" + managerId +
                 ", Title=" + title +
@@ -126,9 +125,13 @@ public class Event {
         return description;
     }
 
-    public int getStand() { return stand; }
+    public int getStand() {
+        return stand;
+    }
 
-    public void setStand(int stand) { this.stand = stand; }
+    public void setStand(int stand) {
+        this.stand = stand;
+    }
 
     public int getSeat() {
         return seat;
@@ -156,20 +159,25 @@ public class Event {
 
     public ObservableList<Integer> getRowList(int rows) {
         ObservableList<Integer> rowList = FXCollections.observableArrayList();
-        for (int i = 0; i < seat; i++){
+        for (int i = 0; i < seat; i++) {
             if (seats[rows][i] < 1)
-            rowList.addAll(i + 1);
+                rowList.addAll(i + 1);
         }
         return rowList;
     }
-    public int getTime() { return time; }
 
-    public void setTime(int time) { this.time = time; }
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
 
     public void printSeats() {
-        for (int I = 0; I < row; I++){
+        for (int I = 0; I < row; I++) {
             System.out.println("");
-            for (int Y = 0; Y < seat; Y++){
+            for (int Y = 0; Y < seat; Y++) {
                 System.out.print(getSeats(Y, I) + " ");
             }
         }

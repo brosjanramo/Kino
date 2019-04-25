@@ -25,18 +25,17 @@ public class LoginController {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) { //her blir verdien som ble tastet inn sendt videre om den matcher med ID-en til en manager
-                for (int i = 0; i < MainJavaFX.managerList().size(); i++){
-                    if (Integer.toString(MainJavaFX.managerList().get(i).getId()).equals(idField.getText())){
+                for (int i = 0; i < MainJavaFX.managerList().size(); i++) {
+                    if (Integer.toString(MainJavaFX.managerList().get(i).getId()).equals(idField.getText())) {
                         MainJavaFX.managerList().get(i).getId();
                         MainJavaFX.setCurrentPassword(MainJavaFX.managerList().get(i).getId());
                         MainJavaFX.getInstance().setHovedLayout();
-                    }
-                    else{
+                    } else {
                         messageLabel.setText("Wrong ID! Try 123456");
                     }
                     System.out.println(idField.getText());
                 }
-        }
+            }
 
         });
 
@@ -44,7 +43,7 @@ public class LoginController {
             @Override
             public void handle(ActionEvent event) {
 
-                String guest=guestButton.getText();
+                String guest = guestButton.getText();
                 MainJavaFX.getInstance().setHovedLayout();
             }
         });

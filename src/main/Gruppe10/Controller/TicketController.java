@@ -1,4 +1,5 @@
 package Gruppe10.Controller;
+
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.WriteJson;
 import Gruppe10.Model.AlertBox;
@@ -22,13 +23,12 @@ import java.util.Calendar;
 public class TicketController {
 
 
-
     @FXML
     private Button buy;
     @FXML
     private Label eventTitle;
     @FXML
-    private ComboBox seat,row,stand;
+    private ComboBox seat, row, stand;
     @FXML
     private DatePicker age;
     @FXML
@@ -41,24 +41,22 @@ public class TicketController {
     private TextField txtPosition;
 
 
-
     private Event buyTicketEvent;
 
 
     @FXML
-    public void initialize(){
+    public void initialize() {
 
         age.setEditable(false);
 
         buy.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Period period= Period.between(age.getValue(),LocalDate.now());
+                Period period = Period.between(age.getValue(), LocalDate.now());
 
-                if(period.getYears() < buyTicketEvent.getAgeRestrict()){
+                if (period.getYears() < buyTicketEvent.getAgeRestrict()) {
                     new AlertBox("Too young", "You are not old enough for this event", "", 2);
-                }
-                else{
+                } else {
                     String name = txtName.getText();
                     LocalDate date = age.getValue();
                     String email = txtEmail.getText();
@@ -73,7 +71,7 @@ public class TicketController {
                     if (buyTicketEvent.getSeats(seatN, rowN) == 0) {
                         new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
 
-                        new AlertBox("Confirmation", "A mail has been sent to " + txtEmail.getText(),"",2);
+                        new AlertBox("Confirmation", "A mail has been sent to " + txtEmail.getText(), "", 2);
                         MainJavaFX.getInstance().setHovedLayout();
 
                         ArrayList<Event> arrayList = DataHandler.getEventList();
@@ -81,9 +79,8 @@ public class TicketController {
 
                         buyTicketEvent.printSeats();
                     } else {
-                        new AlertBox("Error", "Your seat has been taken, please choose another one","", 2);
+                        new AlertBox("Error", "Your seat has been taken, please choose another one", "", 2);
                     }
-
 
 
                 }
@@ -103,14 +100,14 @@ public class TicketController {
         if (buyTicketEvent != null) {
             eventTitle.setText(buyTicketEvent.getTitle());
 
-            for (int i=0;i<buyTicketEvent.getSeat();i++)
-                seat.getItems().addAll(i+1);
+            for (int i = 0; i < buyTicketEvent.getSeat(); i++)
+                seat.getItems().addAll(i + 1);
 
-            for (int i=0;i<buyTicketEvent.getRow();i++)
-                row.getItems().addAll(i+1);
+            for (int i = 0; i < buyTicketEvent.getRow(); i++)
+                row.getItems().addAll(i + 1);
 
-            for (int i=0;i<buyTicketEvent.getStand();i++) {
-                stand.getItems().addAll(i+1);
+            for (int i = 0; i < buyTicketEvent.getStand(); i++) {
+                stand.getItems().addAll(i + 1);
             }
 
         }
@@ -125,8 +122,6 @@ public class TicketController {
             }
         });
     }
-
-
 
 
 }

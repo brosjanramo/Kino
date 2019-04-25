@@ -64,10 +64,10 @@ public class HovedLayoutController {
 
     private Person person;
 
-    ObservableList<String> sortMethods= FXCollections.observableArrayList(
-      "Alfabetical ascending",
-              "Alfabetical descending",
-              "Date ascending",
+    ObservableList<String> sortMethods = FXCollections.observableArrayList(
+            "Alfabetical ascending",
+            "Alfabetical descending",
+            "Date ascending",
             "Date descending",
             "Price ascending",
             "Price descending",
@@ -75,7 +75,7 @@ public class HovedLayoutController {
             "Capacity descending"
     );
 
-    ObservableList<Event> listWithEvents= FXCollections.observableArrayList();
+    ObservableList<Event> listWithEvents = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -86,13 +86,13 @@ public class HovedLayoutController {
 //
 //            }
 //        }
-        if (MainJavaFX.getCurrentPassword() == 0){
+        if (MainJavaFX.getCurrentPassword() == 0) {
             listWithEvents.addAll(DataHandler.getEventData());
             newEvent.setVisible(false);
             editEvent.setVisible(false);
             btnDelete.setVisible(false);
         }
-        if (MainJavaFX.getCurrentPassword() > 0){
+        if (MainJavaFX.getCurrentPassword() > 0) {
             listWithEvents.addAll(DataHandler.getEventData());
         }
         eventListView.setItems(listWithEvents);
@@ -108,36 +108,29 @@ public class HovedLayoutController {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 
-                if(newValue=="Alfabetical descending"){
-                    Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
+                if (newValue == "Alfabetical descending") {
+                    Comparator<Event> comparator = Comparator.comparing(Event::getTitle);
                     FXCollections.sort(listWithEvents, comparator.reversed());
-                }
-                else if(newValue=="Alfabetical ascending"){
-                    Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
+                } else if (newValue == "Alfabetical ascending") {
+                    Comparator<Event> comparator = Comparator.comparing(Event::getTitle);
                     FXCollections.sort(listWithEvents, comparator);
-                }
-                else if(newValue=="Date descending"){
-                    Comparator<Event> comparator= Comparator.comparing(Event::getDate);
+                } else if (newValue == "Date descending") {
+                    Comparator<Event> comparator = Comparator.comparing(Event::getDate);
                     FXCollections.sort(listWithEvents, comparator.reversed());
-                }
-                else if(newValue=="Date ascending"){
-                    Comparator<Event> comparator= Comparator.comparing(Event::getDate);
+                } else if (newValue == "Date ascending") {
+                    Comparator<Event> comparator = Comparator.comparing(Event::getDate);
                     FXCollections.sort(listWithEvents, comparator);
-                }
-                else if(newValue=="Price descending"){
-                    Comparator<Event>comparator= Comparator.comparing(Event::getPrice);
+                } else if (newValue == "Price descending") {
+                    Comparator<Event> comparator = Comparator.comparing(Event::getPrice);
                     FXCollections.sort(listWithEvents, comparator.reversed());
-                }
-                else if(newValue=="Price ascending"){
-                    Comparator<Event>comparator= Comparator.comparing(Event::getPrice);
+                } else if (newValue == "Price ascending") {
+                    Comparator<Event> comparator = Comparator.comparing(Event::getPrice);
                     FXCollections.sort(listWithEvents, comparator);
-                }
-                else if(newValue=="Capacity descending"){
-                    Comparator<Event>comparator= Comparator.comparingInt(Event::getCapacity);
+                } else if (newValue == "Capacity descending") {
+                    Comparator<Event> comparator = Comparator.comparingInt(Event::getCapacity);
                     FXCollections.sort(listWithEvents, comparator.reversed());
-                }
-                else if(newValue=="Capacity ascending"){
-                    Comparator<Event>comparator= Comparator.comparingInt(Event::getCapacity);
+                } else if (newValue == "Capacity ascending") {
+                    Comparator<Event> comparator = Comparator.comparingInt(Event::getCapacity);
                     FXCollections.sort(listWithEvents, comparator);
                 }
 

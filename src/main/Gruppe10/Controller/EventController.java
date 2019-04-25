@@ -63,14 +63,14 @@ public class EventController {
             seat = Integer.parseInt(txtSeat.getText());
             stand = Integer.parseInt(txtStand.getText());
             row = Integer.parseInt(txtRow.getText());
-            time= Integer.parseInt(timeOfEvent.getText());
+            time = Integer.parseInt(timeOfEvent.getText());
             price = Integer.parseInt(txtPrice.getText());
         } catch (NumberFormatException ex) {
             new AlertBox("INPUT ERROR", "Please use numbers and text correctly", "Age, seat, stand, row, time and price must be numbers.", 1);
             return;
         }
 
-        if (!editNewEvent){
+        if (!editNewEvent) {
             int managerID = MainJavaFX.getCurrentPassword();
             Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand, description, time);
             arrayList.add(newEvent);
