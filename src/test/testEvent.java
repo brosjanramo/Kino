@@ -1,5 +1,7 @@
 
+import Gruppe10.Model.Customer;
 import Gruppe10.Model.Event;
+import Gruppe10.Model.Ticket;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -9,6 +11,7 @@ import java.util.ArrayList;
 
 public class testEvent {
     private static Event event;
+    private static Customer testson;
     private static ArrayList<Event> eventList = new ArrayList<>();
 
     @BeforeAll
@@ -17,6 +20,7 @@ public class testEvent {
         Event concertEvent = new Event("Concert", LocalDate.now(), 123456,18,"Location",220, 20,20, 3,"Description", 360);
         eventList.add(event);
         eventList.add(concertEvent);
+        testson = new Customer("First Testson", LocalDate.now(), "test@test.com", 12345678, "Here");
 
     }
     @Test
@@ -36,4 +40,19 @@ public class testEvent {
         event.setTitle("Title");
         Assertions.assertEquals("Title",eventList.get(0).getTitle());
     }
+    @Test
+    public void GetAvailableSeat() {
+        Assertions.assertEquals(0,event.getSeats(2,1));
+    }
+    @Test
+    public void GetCorrectSeat() {
+        new Ticket(event,testson,1,1,1);
+        Assertions.assertEquals(1,event.getSeats(1,1));
+    }
+    @Test
+    public void GetTakenSeat() {
+        Assertions.assertEquals(1,event.getSeats(1,1));
+    }
+
+
 }

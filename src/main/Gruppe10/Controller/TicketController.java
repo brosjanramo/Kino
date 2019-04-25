@@ -1,6 +1,7 @@
 package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.WriteJson;
+import Gruppe10.Model.AlertBox;
 import Gruppe10.Model.Customer;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
@@ -54,11 +55,8 @@ public class TicketController {
             public void handle(ActionEvent event) {
                 Period period= Period.between(age.getValue(),LocalDate.now());
 
-                if(period.getYears()<buyTicketEvent.getAgeRestrict()){
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Too young");
-                    alert.setHeaderText("You are not old enough for this event");
-                    alert.showAndWait();
+                if(period.getYears() < buyTicketEvent.getAgeRestrict()){
+                    new AlertBox("Too young", "You are not old enough for this event", "", 2);
                 }
                 else{
                     String name = txtName.getText();
@@ -73,12 +71,9 @@ public class TicketController {
                     //int standN = (Integer) stand.getValue();
 
                     if (buyTicketEvent.getSeats(seatN, rowN) == 0) {
-                        Ticket newTicket = new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
+                        new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
 
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Confirmation");
-                        alert.setHeaderText("A mail has been sent to " + txtEmail.getText());
-                        alert.showAndWait();
+                        new AlertBox("Confirmation", "A mail has been sent to " + txtEmail.getText(),"",2);
                         MainJavaFX.getInstance().setHovedLayout();
 
                         ArrayList<Event> arrayList = DataHandler.getEventList();
@@ -86,10 +81,7 @@ public class TicketController {
 
                         buyTicketEvent.printSeats();
                     } else {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Your seat has been taken, please choose another one");
-                        alert.showAndWait();
+                        new AlertBox("Error", "Your seat has been taken, please choose another one","", 2);
                     }
 
 
