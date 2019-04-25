@@ -1,7 +1,7 @@
 @startuml
 
 
-CostumerManager --> GUI
+CustomerManager as "Customer/Manager" --> GUI
 GUI --> Database
 Database --> GUI
 GUI --> TicketControl
