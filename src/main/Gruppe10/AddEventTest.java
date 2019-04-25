@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class AddEventTest {
     public static void main(String[] args) {
         ArrayList<Event> arrayList = ReadJson.getList();
-        //Event event = new Event("Title", LocalDate.now(),18,"Sted",120, 2,2, 3,2,"Be");
-        //arrayList.add(event);
+        Event event = new Event("Title", LocalDate.now(), 123456,18,"Location",120, 2,2, 3,"Description", 120);
+        arrayList.add(event);
         WriteJson.addToJson(arrayList);
 
         System.out.println("Event Created!");

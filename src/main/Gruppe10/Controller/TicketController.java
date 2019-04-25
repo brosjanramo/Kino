@@ -52,12 +52,9 @@ public class TicketController {
         buy.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
                 Period period= Period.between(age.getValue(),LocalDate.now());
-                System.out.println(period.getYears());
 
                 if(period.getYears()<buyTicketEvent.getAgeRestrict()){
-
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Too young");
                     alert.setHeaderText("You are not old enough for this event");

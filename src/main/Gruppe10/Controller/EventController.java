@@ -55,15 +55,27 @@ public class EventController {
 
         String title = txtTitle.getText();
         String description = txtDescription.getText();
-        int price = Integer.parseInt(txtPrice.getText());
         LocalDate date = datePicker.getValue();
-        int agerestrict = (int) Math.round(agePicker.getValue());
-        int seat = Integer.parseInt(txtSeat.getText());
-        int stand = Integer.parseInt(txtStand.getText());
-        int row = Integer.parseInt(txtRow.getText());
-        int time= Integer.parseInt(timeOfEvent.getText());
         String place = txtLocation.getText();
         ArrayList<Event> arrayList = DataHandler.getEventList();
+
+        int agerestrict = 0, seat = 0, stand = 0, row = 0, time = 0, price = 0;
+
+        try {
+            agerestrict = (int) Math.round(agePicker.getValue());
+            seat = Integer.parseInt(txtSeat.getText());
+            stand = Integer.parseInt(txtStand.getText());
+            row = Integer.parseInt(txtRow.getText());
+            time= Integer.parseInt(timeOfEvent.getText());
+            price = Integer.parseInt(txtPrice.getText());
+        } catch (NumberFormatException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("INPUT ERROR");
+            alert.setHeaderText("Please use numbers and text correctly");
+            alert.setContentText("Age, seat, stand, row, time and price must be numbers.");
+            alert.show();
+            return;
+        }
 
         if (!editNewEvent){
             int managerID = MainJavaFX.getCurrentPassword();
@@ -105,18 +117,20 @@ public class EventController {
 
         if (eventToBeEdited != null) {
             txtDescription.setText(eventToBeEdited.getDescription());
-            timeOfEvent.setText(String.valueOf(eventToBeEdited.getTime()));
+            datePicker.setValue(eventToBeEdited.getDate());
             txtTitle.setText(eventToBeEdited.getTitle());
-            txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
             txtDescription.setText(eventToBeEdited.getDescription());
             agePicker.setValue(eventToBeEdited.getAgeRestrict());
             txtLocation.setText(eventToBeEdited.getPlace());
-            txtPrice.setText(String.valueOf(eventToBeEdited.getPrice()));
-            datePicker.setValue(eventToBeEdited.getDate());
-            txtSeat.setText(String.valueOf(eventToBeEdited.getSeat()));
-            txtRow.setText(String.valueOf(eventToBeEdited.getRow()));
-            timeOfEvent.setText(String.valueOf(eventToBeEdited.getTime()));
-            txtStand.setText(String.valueOf(eventToBeEdited.getStand()));
+
+                txtPrice.setText(String.valueOf(eventToBeEdited.getPrice()));
+                txtSeat.setText(String.valueOf(eventToBeEdited.getSeat()));
+                txtRow.setText(String.valueOf(eventToBeEdited.getRow()));
+                timeOfEvent.setText(String.valueOf(eventToBeEdited.getTime()));
+                txtStand.setText(String.valueOf(eventToBeEdited.getStand()));
+                txtAge.setText(String.valueOf(eventToBeEdited.getAgeRestrict()));
+
+
         }
     }
 }
