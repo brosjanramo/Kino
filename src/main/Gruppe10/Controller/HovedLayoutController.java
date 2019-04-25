@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class HovedLayoutController {
 
@@ -218,9 +219,12 @@ public class HovedLayoutController {
 
     public void onClickDelete(ActionEvent actionEvent) {
         Event selectedEvent = eventListView.getSelectionModel().getSelectedItem();
-        ArrayList<Event> eventList = new ArrayList<>();
-        listWithEvents.remove(selectedEvent);
-        eventList.addAll(listWithEvents);
-        WriteJson.addToJson(eventList);
+        WriteJson.addToJson(deleteEventFromList(selectedEvent, listWithEvents));
+    }
+
+    static public ArrayList<Event> deleteEventFromList(Event selectedEvent, List<Event> list) {
+        list.remove(selectedEvent);
+        ArrayList<Event> eventList = new ArrayList<>(list);
+        return eventList;
     }
 }
