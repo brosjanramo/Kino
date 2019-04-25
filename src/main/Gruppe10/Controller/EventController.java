@@ -1,20 +1,16 @@
 package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
-import Gruppe10.Json.ReadJson;
 import Gruppe10.Json.WriteJson;
-import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.AlertBox;
 import Gruppe10.Model.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class EventController {
     @FXML
@@ -78,7 +74,7 @@ public class EventController {
             int managerID = MainJavaFX.getCurrentPassword();
             Event newEvent = new Event(title, date, managerID, agerestrict, place, price, seat, row, stand, description, time);
             arrayList.add(newEvent);
-            System.out.println("New event created");
+
             WriteJson.addToJson(arrayList);
         } else {
             eventToBeEdited.setTitle(title);
@@ -92,13 +88,7 @@ public class EventController {
             eventToBeEdited.setPrice(price);
             eventToBeEdited.setTime(time);
 
-            HovedLayoutController newTest = new HovedLayoutController();
-
-            System.out.println("Event Edit");
             WriteJson.addToJson(arrayList);
-            for (Event event : arrayList) {
-                System.out.println(event);
-            }
         }
         MainJavaFX.getInstance().setHovedLayout();
     }

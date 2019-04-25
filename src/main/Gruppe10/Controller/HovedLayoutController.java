@@ -2,7 +2,6 @@ package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.WriteJson;
-import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.AlertBox;
 import Gruppe10.Model.Event;
@@ -18,7 +17,6 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Comparator;
 
