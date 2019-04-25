@@ -398,13 +398,13 @@
       "month": 5,
       "day": 10
     },
-    "time": 12,
+    "time": 0,
     "ageRestrict": 13,
     "place": "Fredrikstad",
     "capacity": 5,
     "seat": 5,
     "row": 1,
-    "price": 100,
+    "price": 0,
     "seats": [
       [
         0,

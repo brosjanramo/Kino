@@ -2,8 +2,8 @@ package Gruppe10.Controller;
 
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.WriteJson;
-import Gruppe10.Main;
 import Gruppe10.MainJavaFX;
+import Gruppe10.Model.AlertBox;
 import Gruppe10.Model.Event;
 import Gruppe10.Model.Person;
 import javafx.beans.value.ChangeListener;
@@ -17,7 +17,6 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -110,11 +109,11 @@ public class HovedLayoutController {
 
                 if(newValue=="Alfabetical descending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
-                    FXCollections.sort(listWithEvents, comparator);
+                    FXCollections.sort(listWithEvents, comparator.reversed());
                 }
                 else if(newValue=="Alfabetical ascending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getTitle);
-                    FXCollections.sort(listWithEvents, comparator.reversed());
+                    FXCollections.sort(listWithEvents, comparator);
                 }
                 else if(newValue=="Date descending"){
                     Comparator<Event> comparator= Comparator.comparing(Event::getDate);
@@ -165,10 +164,7 @@ public class HovedLayoutController {
 
 
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("No chosen event");
-                    alert.setHeaderText("Please select an event");
-                    alert.showAndWait();
+                    new AlertBox("No chosen event", "Please select an event", "", 2);
                 }
             }
         });
@@ -178,7 +174,6 @@ public class HovedLayoutController {
             public void handle(ActionEvent event) {
                 newEvent(event);
                 MainJavaFX.getInstance().setNewEventLayout();
-                System.out.println("Ny event");
             }
         });
 
@@ -190,10 +185,7 @@ public class HovedLayoutController {
                 if (buyTicket != null) {
                     MainJavaFX.getInstance().setTicketLayout(buyTicket);
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("No chosen event");
-                    alert.setHeaderText("Please select an event");
-                    alert.showAndWait();
+                    new AlertBox("No chosen event", "Please select an event", "", 2);
                 }
             }
         });

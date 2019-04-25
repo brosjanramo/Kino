@@ -11,5 +11,7 @@ public class Ticket {
         this.seat = seat;
         this.row = row;
         this.stand = stand;
+
+        event.setSeats(seat, row);
     }
 }

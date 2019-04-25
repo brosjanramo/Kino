@@ -1,6 +1,7 @@
 package Gruppe10.Controller;
 import Gruppe10.Data.DataHandler;
 import Gruppe10.Json.WriteJson;
+import Gruppe10.Model.AlertBox;
 import Gruppe10.Model.Customer;
 import Gruppe10.MainJavaFX;
 import Gruppe10.Model.Event;
@@ -52,16 +53,10 @@ public class TicketController {
         buy.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
                 Period period= Period.between(age.getValue(),LocalDate.now());
-                System.out.println(period.getYears());
 
-                if(period.getYears()<buyTicketEvent.getAgeRestrict()){
-
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Too young");
-                    alert.setHeaderText("You are not old enough for this event");
-                    alert.showAndWait();
+                if(period.getYears() < buyTicketEvent.getAgeRestrict()){
+                    new AlertBox("Too young", "You are not old enough for this event", "", 2);
                 }
                 else{
                     String name = txtName.getText();
@@ -75,24 +70,22 @@ public class TicketController {
                     int rowN = (Integer) row.getValue() - 1;
                     //int standN = (Integer) stand.getValue();
 
-                    Ticket newTicket = new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
-                    buyTicketEvent.setSeats(seatN, rowN);
+                    if (buyTicketEvent.getSeats(seatN, rowN) == 0) {
+                        new Ticket(buyTicketEvent, newCustomer, seatN, rowN, 0);
 
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Confirmation");
-                    alert.setHeaderText("A mail has been sent to " + txtEmail.getText());
-                    alert.showAndWait();
-                    MainJavaFX.getInstance().setHovedLayout();
+                        new AlertBox("Confirmation", "A mail has been sent to " + txtEmail.getText(),"",2);
+                        MainJavaFX.getInstance().setHovedLayout();
 
-                    ArrayList<Event> arrayList = DataHandler.getEventList();
-                    WriteJson.addToJson(arrayList);
+                        ArrayList<Event> arrayList = DataHandler.getEventList();
+                        WriteJson.addToJson(arrayList);
 
-                    for (int I = 0; I < buyTicketEvent.getRow(); I++){
-                        System.out.println("");
-                        for (int Y = 0; Y < buyTicketEvent.getSeat(); Y++){
-                            System.out.print(buyTicketEvent.getSeats(Y, I) + " ");
-                        }
+                        buyTicketEvent.printSeats();
+                    } else {
+                        new AlertBox("Error", "Your seat has been taken, please choose another one","", 2);
                     }
+
+
+
                 }
 
             }
